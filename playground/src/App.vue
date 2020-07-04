@@ -1,7 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 22 + Vite" />
+    <HelloWorld msg="Hello Vue 2 + Vite" />
     <h2>Scoped css</h2>
     <div class="scoped">scoped css works!</div>
 <!--    <h2>Module css</h2>-->

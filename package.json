@@ -35,7 +35,8 @@
     "@types/fs-extra": "^9.0.1",
     "@types/hash-sum": "^1.0.0",
     "@types/node": "^14.0.14",
+    "lint-staged": "^10.2.11",
     "typescript": "^3.9.6",
-    "lint-staged": "^10.2.11"
+    "yorkie": "^2.0.0"
   }
 }

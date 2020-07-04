@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-vue2",
   "version": "0.0.1",
-  "description": "Vue2 plugin for Vite",
+  "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc -w"

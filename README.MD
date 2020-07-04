@@ -18,3 +18,5 @@ module.exports = {
 - Module Css Support
 - Build Support
 - Compiler options
+- Src Import handing
+- Custom Block

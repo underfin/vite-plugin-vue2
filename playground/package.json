@@ -1,0 +1,17 @@
+{
+  "name": "vite-vue2-playgorund",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-beta.8"
+  }
+}

@@ -16,3 +16,5 @@ module.exports = {
 
 - Assets resolve
 - Module Css Support
+- Build Support
+- Compiler options

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite --debug"
+    "dev": "vite --debug",
+    "build": "vite build --debug"
   },
   "author": "",
   "license": "ISC",

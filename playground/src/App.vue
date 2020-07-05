@@ -4,8 +4,8 @@
     <HelloWorld msg="Hello Vue 2 + Vite" />
     <h2>Scoped css</h2>
     <div class="scoped">scoped css works!</div>
-<!--    <h2>Module css</h2>-->
-<!--    <div :class="$style.module">module css works!</div>-->
+    <h2>Module css</h2>
+    <div :class="$style.module">module css works!</div>
     <SrcImport/>
   </div>
 </template>
@@ -29,9 +29,8 @@ export default {
   }
 </style>
 
-
-<!--<style module>-->
-<!--  .module {-->
-<!--    color: blue;-->
-<!--  }-->
-<!--</style>-->
+<style module>
+  .module {
+    color: yellow;
+  }
+</style>

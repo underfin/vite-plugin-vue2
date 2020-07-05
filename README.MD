@@ -12,12 +12,6 @@ module.exports = {
 }
 ```
 
-## Supported Dev feature
-
-- Dev Assets Resolve
-- HMR
-- Scoped Css
-
 ## Todo
 
 - Compiler options

@@ -20,9 +20,7 @@ module.exports = {
 
 ## Todo
 
-- Assets resolve
 - Module Css Support
-- Build Support
 - Compiler options
-- Src Import handing
+- Build Src Import handing
 - Custom Block

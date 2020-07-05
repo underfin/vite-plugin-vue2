@@ -6,16 +6,19 @@
     <div class="scoped">scoped css works!</div>
 <!--    <h2>Module css</h2>-->
 <!--    <div :class="$style.module">module css works!</div>-->
+    <SrcImport/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import SrcImport from './components/SrcImport.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    SrcImport
   }
 }
 </script>

@@ -4,8 +4,17 @@
   "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsc -w"
+    "dev": "tsc -w -p . --skipLibCheck",
+    "build": "rm -rf dist && tsc -p . --skipLibCheck",
+    "prepublishOnly": "yarn build"
   },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vite",
+    "vue2"
+  ],
   "author": "underfin",
   "license": "MIT",
   "gitHooks": {

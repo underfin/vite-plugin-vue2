@@ -1,7 +1,7 @@
 export default {
   data() {
     return {
-      value: 0,
+      msg: 'hello from <script src="./script.ts">',
     }
   },
 }

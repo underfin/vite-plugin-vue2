@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite --debug",
-    "build": "vite build --debug"
+    "build": "vite build --debug",
+    "serve-build": "cd ./dist && http-server -c-1 -p 3001 "
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "vite": "^1.0.0-beta.8"
   }
 }

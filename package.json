@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc -w -p . --skipLibCheck",
+    "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "prepublishOnly": "yarn build"
   },
@@ -44,8 +45,14 @@
   "devDependencies": {
     "@types/fs-extra": "^9.0.1",
     "@types/hash-sum": "^1.0.0",
+    "@types/jest": "^26.0.4",
     "@types/node": "^14.0.14",
+    "@types/puppeteer": "^3.0.1",
+    "execa": "^4.0.2",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
+    "puppeteer": "^5.0.0",
+    "ts-jest": "^26.1.1",
     "typescript": "^3.9.6",
     "yorkie": "^2.0.0"
   }

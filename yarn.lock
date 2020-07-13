@@ -6101,10 +6101,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-vite@^1.0.0-beta.8:
-  version "1.0.0-beta.8"
-  resolved "https://registry.npm.taobao.org/vite/download/vite-1.0.0-beta.8.tgz#69828c5339675e4fc68b7eee0cdda60bd43d2406"
-  integrity sha1-aYKMUzlnXk/Gi37uDN2mC9Q9JAY=
+vite@^1.0.0-beta.11:
+  version "1.0.0-beta.11"
+  resolved "https://registry.npm.taobao.org/vite/download/vite-1.0.0-beta.11.tgz#85c87549264d4b74a05da2c3eb1eb42fa8460197"
+  integrity sha1-hch1SSZNS3SgXaLD6x60L6hGAZc=
   dependencies:
     "@babel/parser" "^7.9.4"
     "@rollup/plugin-commonjs" "^13.0.0"

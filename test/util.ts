@@ -63,7 +63,7 @@ export async function startServer(isBuild: boolean) {
 
   console.log('launching browser')
   page = await browser.newPage()
-  await page.goto('http://localhost:3001')
+  await page.goto('http://localhost:3000')
 }
 
 export async function killServer() {

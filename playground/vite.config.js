@@ -1,7 +1,7 @@
-const vitePluginVue2 = require('../dist')
+const { createVuePlugin } = require('../dist')
 
 const config = {
-  plugins: [vitePluginVue2()],
+  plugins: [createVuePlugin()],
 }
 
 export default config

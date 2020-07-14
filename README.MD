@@ -8,12 +8,11 @@ Vite plugin for Vue2.
 ``` js
 // vite.config.js
 module.exports = {
-  plugins: [require('vite-plugin-vue2')]
+  plugins: [require('vite-plugin-vue2')()]
 }
 ```
 
 ## Todo
 
-- Compiler options
 - Build Src Import handing
 - Custom Block

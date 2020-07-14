@@ -7,8 +7,10 @@ Vite plugin for Vue2.
 
 ``` js
 // vite.config.js
+const { createVuePlugin } = require('vite-plugin-vue2')
+
 module.exports = {
-  plugins: [require('vite-plugin-vue2')()]
+  plugins: [createVuePlugin()],
 }
 ```
 

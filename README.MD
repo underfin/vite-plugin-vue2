@@ -1,7 +1,7 @@
 # vite-plugin-vue2
 **Current status: experimental**
 
-Vite plugin for Vue2.
+You can use it in dev now.
 
 ## Usage
 

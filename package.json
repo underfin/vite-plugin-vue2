@@ -42,7 +42,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "vite": ">=1.0.0-beta.11"
+    "vite": ">=1.0.0-rc.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.1",

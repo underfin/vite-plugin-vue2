@@ -1,13 +1,15 @@
 {
   "name": "vite-plugin-vue2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc -w -p . --skipLibCheck",
     "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
-    "prepublishOnly": "yarn build"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "prepublishOnly": "yarn build && yarn changelog",
+    "postpublish": "git add CHANGELOG.md && git commit -m 'chore: changelog [ci skip]'"
   },
   "files": [
     "dist"
@@ -50,6 +52,7 @@
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.14",
     "@types/puppeteer": "^3.0.1",
+    "conventional-changelog-cli": "^2.0.34",
     "execa": "^4.0.2",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",

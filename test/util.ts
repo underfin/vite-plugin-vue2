@@ -9,7 +9,9 @@ let page: puppeteer.Page
 const binPath = path.resolve(__dirname, '../node_modules/vite/bin/vite.js')
 const fixtureDir = path.join(__dirname, '../playground')
 const tempDir = path.join(__dirname, '../temp')
+console.log('===', __dirname)
 
+console.log('===', binPath)
 export async function preTest(isBuild: boolean = false) {
   try {
     await fs.remove(tempDir)

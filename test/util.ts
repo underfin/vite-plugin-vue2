@@ -17,7 +17,7 @@ export async function preTest(isBuild: boolean = false) {
     filter: (file) => !/dist|node_modules/.test(file),
   })
   await execa('yarn', { cwd: tempDir })
-  const binPath = path.resolve(tempDir, '/node_modules/vite/bin/vite.js')
+  const binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
 
   isBuild && (await build(binPath))
 

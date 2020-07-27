@@ -6,12 +6,9 @@ import puppeteer, { ElementHandle } from 'puppeteer'
 let devServer: any
 let browser: puppeteer.Browser
 let page: puppeteer.Page
-const binPath = path.resolve(__dirname, '../node_modules/vite/bin/vite.js')
 const fixtureDir = path.join(__dirname, '../playground')
 const tempDir = path.join(__dirname, '../temp')
-console.log('===', __dirname)
 
-console.log('===', binPath)
 export async function preTest(isBuild: boolean = false) {
   try {
     await fs.remove(tempDir)
@@ -20,13 +17,14 @@ export async function preTest(isBuild: boolean = false) {
     filter: (file) => !/dist|node_modules/.test(file),
   })
   await execa('yarn', { cwd: tempDir })
+  const binPath = path.resolve(tempDir, '/node_modules/vite/bin/vite.js')
 
-  isBuild && (await build())
+  isBuild && (await build(binPath))
 
-  await startServer(isBuild)
+  await startServer(isBuild, binPath)
 }
 
-async function build() {
+async function build(binPath: string) {
   console.log('building...')
   const buildOutput = await execa(binPath, ['build'], {
     cwd: tempDir,
@@ -44,7 +42,7 @@ export async function postTest() {
   await killServer()
 }
 
-export async function startServer(isBuild: boolean) {
+export async function startServer(isBuild: boolean, binPath: string) {
   // start dev server
   devServer = execa(binPath, {
     cwd: isBuild ? path.join(tempDir, '/dist') : tempDir,

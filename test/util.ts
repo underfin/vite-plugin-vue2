@@ -6,10 +6,11 @@ import puppeteer, { ElementHandle } from 'puppeteer'
 let devServer: any
 let browser: puppeteer.Browser
 let page: puppeteer.Page
+let binPath: string
 const fixtureDir = path.join(__dirname, '../playground')
 const tempDir = path.join(__dirname, '../temp')
 
-export async function preTest(isBuild: boolean = false) {
+export async function preTest() {
   try {
     await fs.remove(tempDir)
   } catch (e) {}
@@ -17,14 +18,12 @@ export async function preTest(isBuild: boolean = false) {
     filter: (file) => !/dist|node_modules/.test(file),
   })
   await execa('yarn', { cwd: tempDir })
-  const binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
+  binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
 
-  isBuild && (await build(binPath))
-
-  await startServer(isBuild, binPath)
+  await build()
 }
 
-async function build(binPath: string) {
+async function build() {
   console.log('building...')
   const buildOutput = await execa(binPath, ['build'], {
     cwd: tempDir,
@@ -38,19 +37,17 @@ export async function postTest() {
   try {
     await fs.remove(tempDir)
   } catch (e) {}
-
-  await killServer()
 }
 
-export async function startServer(isBuild: boolean, binPath: string) {
+export async function startServer(isBuild: boolean) {
   // start dev server
   devServer = execa(binPath, {
     cwd: isBuild ? path.join(tempDir, '/dist') : tempDir,
   })
 
-  browser = await puppeteer.launch(
-    process.env.CI ? { args: ['--no-sandbox', '--disable-setuid-sandbox'] } : {}
-  )
+  browser = await puppeteer.launch({
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  })
 
   await new Promise((resolve) => {
     devServer.stdout.on('data', (data: Buffer) => {

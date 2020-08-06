@@ -32,6 +32,7 @@
     ]
   },
   "dependencies": {
+    "@vue/compiler-sfc": "^3.0.0-rc.5",
     "@vue/component-compiler-utils": "^3.2.0",
     "chalk": "^4.1.0",
     "debug": "^4.1.1",

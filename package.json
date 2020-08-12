@@ -20,6 +20,14 @@
   ],
   "author": "underfin",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/underfin/vite-plugin-vue2"
+  },
+  "bugs": {
+    "url": "https://github.com/underfin/vite-plugin-vue2/issues"
+  },
+  "homepage": "https://github.com/underfin/vite-plugin-vue2/tree/master/#readme",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

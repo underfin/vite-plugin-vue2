@@ -28,4 +28,7 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Run test
-      run: yarn test
+      run: |
+        yarn add vite
+        yarn build
+        yarn test

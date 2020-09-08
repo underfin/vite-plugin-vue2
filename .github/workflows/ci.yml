@@ -24,11 +24,15 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install deps
-      run: yarn install
+      run: |
+        yarn install
+        yarn add vite
+
+    - name: Link vite
+      run: yarn add vite
 
     # Runs a set of commands using the runners shell
     - name: Run test
       run: |
-        yarn add vite
         yarn build
         yarn test

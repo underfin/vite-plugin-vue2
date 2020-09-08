@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc -w -p . --skipLibCheck",
-    "test": "npm run build && jest --clearCache && jest --runInBand --forceExit",
+    "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepublishOnly": "yarn build && yarn changelog",
@@ -65,7 +65,7 @@
     "execa": "^4.0.2",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
-    "puppeteer": "^5.0.0",
+    "puppeteer": "^3.0.0",
     "ts-jest": "^26.1.1",
     "typescript": "^3.9.6",
     "yorkie": "^2.0.0"

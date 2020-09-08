@@ -6,14 +6,11 @@
   "scripts": {
     "dev": "vite --debug",
     "build": "vite build --debug",
-    "serve-build": "cd ./dist && http-server -c-1 -p 3001 "
+    "serve-build": "cd ./dist && vite"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "vite": "^1.0.0-rc.4"
-  },
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "vite": "^1.0.0-rc.4"
   }
 }

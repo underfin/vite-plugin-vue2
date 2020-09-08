@@ -188,9 +188,12 @@ export function declareTests(isBuild: boolean) {
       await expectByPolling(() => getText('.src-imports-script'), 'bye from')
       // template
       await updateFile('src-import/template.html', (c) =>
-        c.replace('{{ msg }}', '{{ msg }} changed')
+        c.replace('gray', 'red')
       )
-      await expectByPolling(() => getText('.src-imports-script'), 'changed')
+      await expectByPolling(
+        () => getText('.src-imports-style'),
+        'This should be light red'
+      )
     }
   })
 }

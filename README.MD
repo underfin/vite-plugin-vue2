@@ -1,11 +1,8 @@
 # vite-plugin-vue2
-**Current status: experimental**
-
-You can use it in dev now.
 
 ## Usage
 
-- run `yarn add vite-plugin-vue2`
+- run `yarn add vite-plugin-vue2 --dev`
 - add the plugin into `vite.config.js`
 ``` js
 // vite.config.js
@@ -18,5 +15,6 @@ module.exports = {
 
 ## Todo
 
-- Build Src Import handing
+- JSX handing
 - Custom Block
+- SSR Build

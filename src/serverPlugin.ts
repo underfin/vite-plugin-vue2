@@ -73,13 +73,17 @@ export const vuePlugin: ServerPlugin = ({
     const publicPath = ctx.path
     let filePath = resolver.requestToFile(publicPath)
     const source = readFile(filePath)
-    const descriptor = parse({
-      source,
-      compiler: vueTemplateCompiler,
-      filename: filePath,
-      sourceRoot: root,
-      needMap: true,
-    }) as SFCDescriptor
+    const descriptor = JSON.parse(
+      JSON.stringify(
+        parse({
+          source,
+          compiler: vueTemplateCompiler,
+          filename: filePath,
+          sourceRoot: root,
+          needMap: true,
+        })
+      )
+    ) as SFCDescriptor
     if (!descriptor) {
       return
     }
@@ -183,7 +187,8 @@ async function parseSFC(
   }
 
   let code =
-    `${scriptImport}
+    `
+${scriptImport}
 ${templateImport}
 const __cssModules = {}
 ${stylesCode}

@@ -187,8 +187,7 @@ async function parseSFC(
   }
 
   let code =
-    `
-${scriptImport}
+    `${scriptImport}
 ${templateImport}
 const __cssModules = {}
 ${stylesCode}

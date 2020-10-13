@@ -6,6 +6,7 @@
     <TestCssModules/>
     <TestHmr/>
     <TestAssets/>
+    <TestJsx/>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import TestScopedCss from './css/TestScopedCss.vue'
 import TestCssModules from './css/TestCssModules.vue'
 import TestHmr from './hmr/TestHmr.vue'
 import TestAssets from './test-assets/TestAssets.vue'
+import TestJsx from './TestJsx.tsx'
 
 export default {
   name: 'App',
@@ -23,7 +25,8 @@ export default {
     TestBlockSrcImport,
     TestCssModules,
     TestHmr,
-    TestAssets
+    TestAssets,
+    TestJsx
   }
 }
 </script>

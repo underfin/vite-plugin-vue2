@@ -198,4 +198,8 @@ export function declareTests(isBuild: boolean) {
       // )
     }
   })
+
+  test('Jsx', async () => {
+    expect(await getText('.jsx')).toMatch('JSX works!')
+  })
 }

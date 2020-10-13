@@ -1,7 +1,7 @@
 const { createVuePlugin } = require('../dist')
 
 const config = {
-  plugins: [createVuePlugin()],
+  plugins: [createVuePlugin({ jsx: true })],
 }
 
 export default config

@@ -40,8 +40,13 @@
     ]
   },
   "dependencies": {
+    "@babel/core": "^7.11.6",
     "@vue/compiler-sfc": "^3.0.0-rc.5",
     "@vue/component-compiler-utils": "^3.2.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-preset-env": "^1.7.0",
     "chalk": "^4.1.0",
     "debug": "^4.1.1",
     "esbuild": "^0.5.19",

@@ -4,7 +4,7 @@
   "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsc -w -p . --skipLibCheck",
+    "dev": "tsc -w -p . --incremental --skipLibCheck",
     "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.11.6",
+    "@rollup/pluginutils": "^4.1.0",
     "@vue/compiler-sfc": "^3.0.0-rc.5",
     "@vue/component-compiler-utils": "^3.2.0",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -48,19 +49,21 @@
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
     "chalk": "^4.1.0",
-    "debug": "^4.1.1",
-    "esbuild": "^0.5.19",
+    "debug": "^4.3.1",
     "fs-extra": "^9.0.1",
     "hash-sum": "^2.0.0",
     "prettier": "^2.0.5",
-    "rollup-plugin-vue": "5.1.9",
+    "querystring": "^0.2.0",
+    "rollup": "^2.35.1",
+    "vite": "2.0.0-beta.4",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "peerDependencies": {
-    "vite": ">=1.0.0-rc.13"
+    "vite": "2.0.0-beta.4"
   },
   "devDependencies": {
+    "@types/debug": "^4.1.5",
     "@types/fs-extra": "^9.0.1",
     "@types/hash-sum": "^1.0.0",
     "@types/jest": "^26.0.4",
@@ -72,7 +75,7 @@
     "lint-staged": "^10.2.11",
     "puppeteer": "^3.0.0",
     "ts-jest": "^26.1.1",
-    "typescript": "^3.9.6",
+    "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
   }
 }

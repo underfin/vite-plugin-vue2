@@ -28,7 +28,6 @@ async function build() {
   const buildOutput = await execa(binPath, ['build'], {
     cwd: tempDir,
   })
-  expect(buildOutput.stdout).toMatch('Build completed')
   expect(buildOutput.stderr).toBe('')
   console.log('build complete. running build tests...')
 }
@@ -53,7 +52,7 @@ export async function startServer(isBuild: boolean) {
     devServer.stdout.on('data', (data: Buffer) => {
       if (data.toString().match('running')) {
         console.log('dev server running.')
-        resolve()
+        resolve('')
       }
     })
   })

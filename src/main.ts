@@ -194,29 +194,27 @@ function genStyleRequest(
 ) {
   let scoped: boolean = false
   let stylesCode = ''
-  descriptor.styles
-    .filter((style) => !!style.content.trim())
-    .forEach((style, i) => {
-      if (style.src) {
-        linkSrcToDescriptor(style.src, filename, descriptor)
-      }
-      const src = style.src || filename
-      const attrsQuery = attrsToQuery(style.attrs, 'css')
-      const srcQuery = style.src ? `&src` : ``
-      const query = `?vue&type=style&index=${i}${srcQuery}`
-      const styleRequest = src + query + attrsQuery
-      if (style.scoped) scoped = true
-      if (style.module) {
-        stylesCode += genCSSModulesCode(
-          i,
-          styleRequest,
-          style.module,
-          cssModuleVar
-        )
-      } else {
-        stylesCode += `\nimport ${JSON.stringify(styleRequest)}`
-      }
-    })
+  descriptor.styles.forEach((style, i) => {
+    if (style.src) {
+      linkSrcToDescriptor(style.src, filename, descriptor)
+    }
+    const src = style.src || filename
+    const attrsQuery = attrsToQuery(style.attrs, 'css')
+    const srcQuery = style.src ? `&src` : ``
+    const query = `?vue&type=style&index=${i}${srcQuery}`
+    const styleRequest = src + query + attrsQuery
+    if (style.scoped) scoped = true
+    if (style.module) {
+      stylesCode += genCSSModulesCode(
+        i,
+        styleRequest,
+        style.module,
+        cssModuleVar
+      )
+    } else {
+      stylesCode += `\nimport ${JSON.stringify(styleRequest)}`
+    }
+  })
 
   return { scoped, stylesCode }
 }

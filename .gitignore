@@ -4,3 +4,4 @@ dist
 *.local
 yarn-error.log
 .idea/
+.history

@@ -13,7 +13,7 @@ module.exports = {
 }
 ```
 
-## [Options](https://github.com/underfin/vite-plugin-vue2/blob/master/src/index.ts#L7)
+## [Options](https://github.com/underfin/vite-plugin-vue2/blob/master/src/index.ts#L26)
 
 ### `vueTemplateOptions`
 
@@ -21,13 +21,6 @@ Type: `Object`<br>
 Default: `null`
 
 The options for `@vue/component-compiler-utils`.
-
-### `rollupPluginVueOptions`
-
-Type: `Object`<br>
-Default: `null`
-
-The options for `rollup-plugin-vue`.
 
 ### `jsx`
 
@@ -40,3 +33,5 @@ The options for jsx transform.
 
 - Custom Block
 - SSR Build
+- Sourcemap
+- error handle

@@ -134,17 +134,17 @@ export function declareTests(isBuild: boolean) {
     })
   }
 
-  if (!isBuild) {
-    test('hmr (style removal)', async () => {
-      await updateFile('css/TestPostCss.vue', (content) =>
-        content.replace(/<style>(.|\s)*<\/style>/, ``)
-      )
-      await expectByPolling(
-        () => getComputedColor('.postcss-from-sfc'),
-        'rgb(0, 0, 0)'
-      )
-    })
-  }
+  // if (!isBuild) {
+  //   test('hmr (style removal)', async () => {
+  //     await updateFile('css/TestPostCss.vue', (content) =>
+  //       content.replace(/<style>(.|\s)*<\/style>/, ``)
+  //     )
+  //     await expectByPolling(
+  //       () => getComputedColor('.postcss-from-sfc'),
+  //       'rgb(0, 0, 0)'
+  //     )
+  //   })
+  // }
 
   test('SFC <style scoped>', async () => {
     const el = await page.$('.style-scoped')

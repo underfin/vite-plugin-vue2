@@ -1,3 +1,13 @@
+## [1.0.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.0.0...v1.0.1) (2021-01-08)
+
+
+### Bug Fixes
+
+* **build:** resolve template assets reference on build ([94b3899](https://github.com/underfin/vite-plugin-vue2/commit/94b3899a097332dbe1e53ece660d562e65cc4ec0)), closes [#15](https://github.com/underfin/vite-plugin-vue2/issues/15)
+* add miss dependency ([8e9d089](https://github.com/underfin/vite-plugin-vue2/commit/8e9d089863e6c77e835c4184ac46f053aa13fb7c)), closes [#14](https://github.com/underfin/vite-plugin-vue2/issues/14)
+
+
+
 # [1.0.0](https://github.com/underfin/vite-plugin-vue2/compare/v0.2.2...v1.0.0) (2021-01-05)
 
 

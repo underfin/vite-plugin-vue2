@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.0.1...v1.0.2) (2021-01-11)
+
+
+### Features
+
+* **jsx:** use `babel-preset-jsx` ([05248ff](https://github.com/underfin/vite-plugin-vue2/commit/05248ffa97ca17adbeccfbe6af64d9053219b9b6)), closes [#17](https://github.com/underfin/vite-plugin-vue2/issues/17)
+
+
+
 ## [1.0.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.0.0...v1.0.1) (2021-01-08)
 
 

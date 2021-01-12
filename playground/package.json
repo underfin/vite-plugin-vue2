@@ -1,16 +1,14 @@
 {
   "name": "vite-vue2-playgorund",
+  "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "vite --debug",
     "build": "vite build --debug",
     "serve-build": "cd ./dist && vite"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "vite": "2.0.0-beta.4"
+    "vite": "^2.0.0-beta.23"
   }
 }

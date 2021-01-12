@@ -31,7 +31,5 @@ The options for jsx transform.
 
 ## Todo
 
-- Custom Block
 - SSR Build
 - Sourcemap
-- error handle

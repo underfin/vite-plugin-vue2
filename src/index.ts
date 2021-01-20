@@ -68,6 +68,11 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
       return handleHotUpdate(ctx, options)
     },
 
+    configResolved(config) {
+      options.isProduction = config.isProduction
+      options.root = config.root
+    },
+
     configureServer(server) {
       options.devServer = server
     },

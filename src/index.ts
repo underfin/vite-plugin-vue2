@@ -126,7 +126,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
     async transform(code, id) {
       const { filename, query } = parseVueRequest(id)
 
-      if (/\.(tsx?|jsx)$/.test(id)) {
+      if (/\.(tsx|jsx)$/.test(id)) {
         return transformVueJsx(code, id)
       }
 

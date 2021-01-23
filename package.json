@@ -9,7 +9,8 @@
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepublishOnly": "yarn build && yarn changelog",
-    "postpublish": "git add CHANGELOG.md && git commit -m 'chore: changelog [ci skip]'"
+    "postpublish": "git add CHANGELOG.md && git commit -m 'chore: changelog [ci skip]'",
+    "postinstall": "patch-package"
   },
   "files": [
     "dist"
@@ -51,6 +52,8 @@
     "debug": "^4.3.1",
     "fs-extra": "^9.0.1",
     "hash-sum": "^2.0.0",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^2.0.5",
     "querystring": "^0.2.0",
     "rollup": "^2.35.1",

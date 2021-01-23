@@ -1,3 +1,21 @@
+# [1.1.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.0.2...v1.1.0) (2021-01-23)
+
+
+### Bug Fixes
+
+* resolve alias assets ([813c89c](https://github.com/underfin/vite-plugin-vue2/commit/813c89cd5312dc9b8b5310afb2517b7ac0f8235f)), closes [#21](https://github.com/underfin/vite-plugin-vue2/issues/21) [#20](https://github.com/underfin/vite-plugin-vue2/issues/20)
+* sfc src import respect alias ([4a834b7](https://github.com/underfin/vite-plugin-vue2/commit/4a834b735ce46f6ab907049e9a051b810729bf64))
+* **hmr:** normalize dev path for hmr ([4ffb851](https://github.com/underfin/vite-plugin-vue2/commit/4ffb851619d2c35aa12e7096ef69dd5d2a811511))
+* add '\0' for virtual module ([b3c4a1b](https://github.com/underfin/vite-plugin-vue2/commit/b3c4a1bf02694cb574f03bd2e3c80353619e4028)), closes [#24](https://github.com/underfin/vite-plugin-vue2/issues/24)
+
+
+### Features
+
+* custom block ([19f7274](https://github.com/underfin/vite-plugin-vue2/commit/19f7274185dc6694f71d188c6e01efd2b296f75b))
+* error handling ([1c430ab](https://github.com/underfin/vite-plugin-vue2/commit/1c430ab7fceeb7a89c67065efb422389218c9cf1))
+
+
+
 ## [1.0.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.0.1...v1.0.2) (2021-01-11)
 
 

@@ -1,8 +1,9 @@
-# 1.2.0 (2021-02-02)
+## 1.2.1 (2021-02-14)
 
 
 ### Bug Fixes
 
+* **playground:** move alias into resolve ([6e03e2c](https://github.com/underfin/vite-plugin-vue2/commit/6e03e2c38e23b01bb18cf2e5f341a131e67751dc))
 * add '\0' for virtual module ([b3c4a1b](https://github.com/underfin/vite-plugin-vue2/commit/b3c4a1bf02694cb574f03bd2e3c80353619e4028)), closes [#24](https://github.com/underfin/vite-plugin-vue2/issues/24)
 * add miss dependency ([8e9d089](https://github.com/underfin/vite-plugin-vue2/commit/8e9d089863e6c77e835c4184ac46f053aa13fb7c)), closes [#14](https://github.com/underfin/vite-plugin-vue2/issues/14)
 * copy sfc descriptor to prevent caching issues ([#9](https://github.com/underfin/vite-plugin-vue2/issues/9)) ([0e13938](https://github.com/underfin/vite-plugin-vue2/commit/0e139381e205722bc8114d6b941b65d039364476))
@@ -21,6 +22,7 @@
 * pass transform with jsx is truly ([97c0916](https://github.com/underfin/vite-plugin-vue2/commit/97c0916ba3e4d0f1c4f1bb9b16f7c1c7d05a17d8)), closes [/github.com/vitejs/vite/issues/970#issuecomment-718461256](https://github.com//github.com/vitejs/vite/issues/970/issues/issuecomment-718461256)
 * reslove alias assets ([813c89c](https://github.com/underfin/vite-plugin-vue2/commit/813c89cd5312dc9b8b5310afb2517b7ac0f8235f)), closes [#21](https://github.com/underfin/vite-plugin-vue2/issues/21) [#20](https://github.com/underfin/vite-plugin-vue2/issues/20)
 * sfc src import respect alias ([4a834b7](https://github.com/underfin/vite-plugin-vue2/commit/4a834b735ce46f6ab907049e9a051b810729bf64))
+* skip rewrite url for id refrence at `xlink:href` at `use` tag ([71b4263](https://github.com/underfin/vite-plugin-vue2/commit/71b42634a359f1c19ae467d805a2421cd38830fc)), closes [#36](https://github.com/underfin/vite-plugin-vue2/issues/36)
 * special handling for class default export in sfc ([#29](https://github.com/underfin/vite-plugin-vue2/issues/29)) ([3be490d](https://github.com/underfin/vite-plugin-vue2/commit/3be490dbf01983001b610226988b7eb2a131ff40))
 * **build:** resolve template assets reference on build ([94b3899](https://github.com/underfin/vite-plugin-vue2/commit/94b3899a097332dbe1e53ece660d562e65cc4ec0)), closes [#15](https://github.com/underfin/vite-plugin-vue2/issues/15)
 * **dev:**  script gencode should place top to reflect sourcemap ([#8](https://github.com/underfin/vite-plugin-vue2/issues/8)) ([6ea995d](https://github.com/underfin/vite-plugin-vue2/commit/6ea995d6ef1720c983a6cedd45e8b3f16227ffe4))

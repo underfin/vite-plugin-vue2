@@ -2,8 +2,10 @@ import { defineConfig } from 'vite'
 const { createVuePlugin } = require('../dist')
 
 const config = defineConfig({
-  alias: {
-    '/@': __dirname,
+  resolve: {
+    alias: {
+      '/@': __dirname,
+    },
   },
   build: {
     minify: false,

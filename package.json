@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue2",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {

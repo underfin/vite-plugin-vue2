@@ -1,4 +1,4 @@
-## 1.2.1 (2021-02-14)
+## [1.2.2](https://github.com/underfin/vite-plugin-vue2/compare/71c768aedcc708f09b1a5b29c29facfede7bae44...v1.2.2) (2021-02-27)
 
 
 ### Bug Fixes
@@ -37,6 +37,7 @@
 ### Features
 
 * custom block ([19f7274](https://github.com/underfin/vite-plugin-vue2/commit/19f7274185dc6694f71d188c6e01efd2b296f75b))
+* determine preprocessLang at template block ([#42](https://github.com/underfin/vite-plugin-vue2/issues/42)) ([c206f88](https://github.com/underfin/vite-plugin-vue2/commit/c206f880e740fcb1dce8f9cea404e9323e1fd170))
 * error handling ([1c430ab](https://github.com/underfin/vite-plugin-vue2/commit/1c430ab7fceeb7a89c67065efb422389218c9cf1))
 * **jsx:** use `babel-preset-jsx` ([05248ff](https://github.com/underfin/vite-plugin-vue2/commit/05248ffa97ca17adbeccfbe6af64d9053219b9b6)), closes [#17](https://github.com/underfin/vite-plugin-vue2/issues/17)
 * JSX handling ([cbd619d](https://github.com/underfin/vite-plugin-vue2/commit/cbd619db062c584b8f6dc9bd76c3a032228a5cfd)), closes [#5](https://github.com/underfin/vite-plugin-vue2/issues/5)

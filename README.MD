@@ -29,6 +29,12 @@ Default: `false`
 
 The options for jsx transform.
 
+### `jsxOptions`
+
+Type: `Object`<br>
+
+The options for `@vue/babel-preset-jsx`.
+
 ## Todo
 
 - SSR Build

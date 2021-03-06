@@ -1,3 +1,13 @@
+## [1.3.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.3.2) (2021-03-06)
+
+
+### Bug Fixes
+
+* add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
+* start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
+
+
+
 ## [1.2.2](https://github.com/underfin/vite-plugin-vue2/compare/71c768aedcc708f09b1a5b29c29facfede7bae44...v1.2.2) (2021-02-27)
 
 

@@ -1,11 +1,14 @@
-## [1.3.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.3.3) (2021-03-13)
+# [1.4.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.0) (2021-03-13)
 
 
 ### Bug Fixes
 
 * add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
+* remove `@vue/compiler-sfc` dep ([4146ef1](https://github.com/underfin/vite-plugin-vue2/commit/4146ef1401dc13e39b1f00d882e3e399fd1307fe)), closes [#45](https://github.com/underfin/vite-plugin-vue2/issues/45)
 * start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
+* support jsx script blocks within sfc ([#53](https://github.com/underfin/vite-plugin-vue2/issues/53)) ([ec3f329](https://github.com/underfin/vite-plugin-vue2/commit/ec3f3292c260e464f5d1d456ee878d3afaa98661))
+* use `import` rather than dynamic `require` ([#51](https://github.com/underfin/vite-plugin-vue2/issues/51)) ([650e7f5](https://github.com/underfin/vite-plugin-vue2/commit/650e7f58509bffad7c92ccb37720d5ac6bc0ce14))
 
 
 

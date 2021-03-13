@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-vue2",
-  "version": "1.3.3",
+  "version": "1.4.0",
   "description": "Vite plugin for Vue2",
   "main": "dist/index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "prepublishOnly": "yarn build && yarn changelog",
-    "postpublish": "git add CHANGELOG.md && git commit -m 'chore: changelog [ci skip]'"
+    "prepublishOnly": "yarn build && yarn changelog"
   },
   "files": [
     "dist"

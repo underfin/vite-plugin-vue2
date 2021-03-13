@@ -1,8 +1,9 @@
-## [1.3.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.3.2) (2021-03-06)
+## [1.3.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.3.3) (2021-03-13)
 
 
 ### Bug Fixes
 
+* add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
 * start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
 

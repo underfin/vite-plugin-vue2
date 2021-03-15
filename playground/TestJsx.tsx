@@ -1,10 +1,10 @@
+const word: string = 'With .JSX extension works!'
+
 export default {
 	props: {
 		render: {}
 	},
 	render() {
-		return <div class={'jsx'}> With .JSX extension works!
-			{this.render}
-		 </div>
+		return <div class={'jsx'}> {word} </div>
 	}
 }

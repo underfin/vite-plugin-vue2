@@ -10,8 +10,8 @@ import assetUrlsModule, {
 } from './assetUrl'
 import srcsetModule from './srcset'
 
-const consolidate = require('consolidate')
-const transpile = require('vue-template-es2015-compiler')
+import consolidate from 'consolidate'
+import transpile from 'vue-template-es2015-compiler'
 
 export interface TemplateCompileOptions {
   source: string
@@ -41,7 +41,8 @@ export function compileTemplate(
   options: TemplateCompileOptions
 ): TemplateCompileResult {
   const { preprocessLang } = options
-  const preprocessor = preprocessLang && consolidate[preprocessLang]
+  const preprocessor =
+    preprocessLang && consolidate[preprocessLang as keyof typeof consolidate]
   if (preprocessor) {
     return actuallyCompile(
       Object.assign({}, options, {
@@ -69,7 +70,13 @@ function preprocess(
   options: TemplateCompileOptions,
   preprocessor: any
 ): string {
-  const { source, filename, preprocessOptions } = options
+  let { source, filename, preprocessOptions } = options
+  if (options.preprocessLang === 'pug') {
+    preprocessOptions = {
+      doctype: 'html',
+      ...preprocessOptions,
+    }
+  }
 
   const finalPreprocessOptions = Object.assign(
     {

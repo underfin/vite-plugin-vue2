@@ -29,6 +29,23 @@ Default: `false`
 
 The options for jsx transform.
 
+``` js
+// use jsx in SFC
+<script lang="jsx">
+export default {
+  name: 'TesxVueJSX',
+  data() {
+    return {
+      message: () => <div>JSX in SFC works!</div>,
+    };
+  },
+  components: {
+      TestSFCJsx
+  }
+}
+</script>
+```
+
 ## Todo
 
 - SSR Build

@@ -7,6 +7,7 @@
     <TestHmr/>
     <TestAssets/>
     <TestJsx/>
+    <TestSFCJSX />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import TestCssModules from './css/TestCssModules.vue'
 import TestHmr from './hmr/TestHmr.vue'
 import TestAssets from './test-assets/TestAssets.vue'
 import TestJsx from './TestJsx.tsx'
+import TestSFCJSX from './TestSFCJSX.vue';
 
 export default {
   name: 'App',
@@ -26,7 +28,8 @@ export default {
     TestCssModules,
     TestHmr,
     TestAssets,
-    TestJsx
+    TestJsx,
+    TestSFCJSX
   }
 }
 </script>

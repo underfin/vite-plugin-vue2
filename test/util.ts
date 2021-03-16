@@ -201,4 +201,8 @@ export function declareTests(isBuild: boolean) {
   test('Jsx', async () => {
     expect(await getText('.jsx')).toMatch('JSX works!')
   })
+
+  test('JsxSFC', async () => {
+    expect(await getText('.jsx-sfc')).toMatch('JSX & SFC works!')
+  })
 }

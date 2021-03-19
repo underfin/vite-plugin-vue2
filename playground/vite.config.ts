@@ -8,6 +8,7 @@ const config = defineConfig({
     },
   },
   build: {
+    sourcemap: true,
     minify: false,
   },
   plugins: [createVuePlugin({ jsx: true })],

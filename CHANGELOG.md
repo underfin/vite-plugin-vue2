@@ -1,14 +1,17 @@
-## [1.4.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.1) (2021-03-16)
+## [1.4.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.2) (2021-03-19)
 
 
 ### Bug Fixes
 
 * add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
+* babel transform ignore babelrc file ([3735379](https://github.com/underfin/vite-plugin-vue2/commit/3735379f62ec5fbcee5aaee60af23c9c383a08db)), closes [#54](https://github.com/underfin/vite-plugin-vue2/issues/54)
+* generate sourcemap ([612d2d5](https://github.com/underfin/vite-plugin-vue2/commit/612d2d5030a89823a12d5a9e78a8a764508585f3)), closes [#34](https://github.com/underfin/vite-plugin-vue2/issues/34)
 * handle jsx ([7898936](https://github.com/underfin/vite-plugin-vue2/commit/7898936cd8b00fd0b2daeb1ed3e71c838f6263ff)), closes [#56](https://github.com/underfin/vite-plugin-vue2/issues/56)
 * remove `@vue/compiler-sfc` dep ([4146ef1](https://github.com/underfin/vite-plugin-vue2/commit/4146ef1401dc13e39b1f00d882e3e399fd1307fe)), closes [#45](https://github.com/underfin/vite-plugin-vue2/issues/45)
 * start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
 * support jsx script blocks within sfc ([#53](https://github.com/underfin/vite-plugin-vue2/issues/53)) ([ec3f329](https://github.com/underfin/vite-plugin-vue2/commit/ec3f3292c260e464f5d1d456ee878d3afaa98661))
+* use `esbuild` compile ts files ([378622b](https://github.com/underfin/vite-plugin-vue2/commit/378622bd81c1178cf29873e481d80292f7857c91)), closes [/github.com/underfin/vite-plugin-vue2/issues/49#issuecomment-799301238](https://github.com//github.com/underfin/vite-plugin-vue2/issues/49/issues/issuecomment-799301238)
 * use `import` rather than dynamic `require` ([#51](https://github.com/underfin/vite-plugin-vue2/issues/51)) ([650e7f5](https://github.com/underfin/vite-plugin-vue2/commit/650e7f58509bffad7c92ccb37720d5ac6bc0ce14))
 
 

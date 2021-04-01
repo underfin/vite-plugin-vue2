@@ -15,6 +15,7 @@ export function transformVueJsx(
   }
 
   const result = transform(code, {
+    filename: 'jsx-transform.ts',
     presets: [[require.resolve('@vue/babel-preset-jsx'), jsxOptions]],
     sourceFileName: id,
     sourceMaps: true,

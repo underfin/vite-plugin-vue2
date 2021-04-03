@@ -1,8 +1,9 @@
-## [1.4.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.2) (2021-03-19)
+## [1.4.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.3) (2021-04-03)
 
 
 ### Bug Fixes
 
+* add `filename` option for compile jsx ([f8cd9c4](https://github.com/underfin/vite-plugin-vue2/commit/f8cd9c4b2bbbf6c7159f07833f888be8deac9d6f)), closes [#58](https://github.com/underfin/vite-plugin-vue2/issues/58)
 * add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
 * babel transform ignore babelrc file ([3735379](https://github.com/underfin/vite-plugin-vue2/commit/3735379f62ec5fbcee5aaee60af23c9c383a08db)), closes [#54](https://github.com/underfin/vite-plugin-vue2/issues/54)

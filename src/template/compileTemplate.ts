@@ -122,7 +122,13 @@ function actuallyCompile(
   const compile =
     optimizeSSR && compiler.ssrCompile ? compiler.ssrCompile : compiler.compile
 
-  let finalCompilerOptions = compilerOptions
+  const defaultCompilerOptions: VueTemplateCompilerOptions = {
+    whitespace: 'condense'
+  }
+
+  let finalCompilerOptions =
+    Object.assign(defaultCompilerOptions, compilerOptions)
+
   if (transformAssetUrls) {
     const builtInModules = [
       transformAssetUrls === true
@@ -130,7 +136,7 @@ function actuallyCompile(
         : assetUrlsModule(transformAssetUrls, transformAssetUrlsOptions),
       srcsetModule(transformAssetUrlsOptions),
     ]
-    finalCompilerOptions = Object.assign({}, compilerOptions, {
+    finalCompilerOptions = Object.assign(defaultCompilerOptions, compilerOptions, {
       modules: [...builtInModules, ...(compilerOptions.modules || [])],
       filename: options.filename,
     })

@@ -202,18 +202,18 @@ async function genCustomBlockCode(
   let code = ''
   await Promise.all(
     descriptor.customBlocks.map(async (block, index) => {
-      if (typeof block.attrs.src === 'string') {
-        await linkSrcToDescriptor(
-          block.attrs.src,
-          filename,
-          descriptor,
-          pluginContext
-        )
+      const blockSrc =
+        typeof block.attrs.src === 'string' ? block.attrs.src : ''
+      if (blockSrc) {
+        await linkSrcToDescriptor(blockSrc, filename, descriptor, pluginContext)
       }
-      const src = block.attrs.src || filename
-      const attrsQuery = attrsToQuery(block.attrs, block.type)
+      const src = blockSrc || filename
+      const attrsQuery = attrsToQuery(
+        block.attrs,
+        path.extname(blockSrc) || block.type
+      )
       const srcQuery = block.attrs.src ? `&src` : ``
-      const query = `?vue&type=${block.type}&index=${index}${attrsQuery}${srcQuery}`
+      const query = `?vue&type=${block.type}&index=${index}${srcQuery}${attrsQuery}`
       const request = JSON.stringify(src + query)
       code += `import block${index} from ${request}\n`
       code += `if (typeof block${index} === 'function') block${index}(component)\n`

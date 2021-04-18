@@ -174,6 +174,7 @@ export function declareTests(isBuild: boolean) {
 
   test('SFC <custom>', async () => {
     expect(await getText('.custom-block')).toMatch('Custom Block')
+    expect(await getText('.custom-block-lang')).toMatch('Custom Block')
     expect(await getText('.custom-block-src')).toMatch('Custom Block')
   })
 

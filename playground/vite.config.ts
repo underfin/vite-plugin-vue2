@@ -17,13 +17,17 @@ const config = defineConfig({
       name: 'customBlock',
       transform(code, id) {
         if (/type=custom/i.test(id)) {
+          const transformedAssginment = code
+            .trim()
+            .replace(/export default/, 'const __customBlock =')
           return {
-            code: `export default function (component) {
+            code: `${transformedAssginment}
+              export default function (component) {
               const options = component.options;
               if (!options.__customBlock) {
                 options.__customBlock = {};
               }
-              Object.assign(options.__customBlock, ${code.trim()});
+              Object.assign(options.__customBlock, __customBlock);
             }`,
           }
         }

@@ -8,6 +8,9 @@
     "build": "vite build --debug",
     "serve": "vite preview"
   },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
   "devDependencies": {
     "vite": "^2.0.0-beta.23"
   }

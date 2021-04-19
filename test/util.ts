@@ -172,6 +172,12 @@ export function declareTests(isBuild: boolean) {
     }
   })
 
+  test('SFC <custom>', async () => {
+    expect(await getText('.custom-block')).toMatch('Custom Block')
+    expect(await getText('.custom-block-lang')).toMatch('Custom Block')
+    expect(await getText('.custom-block-src')).toMatch('Custom Block')
+  })
+
   test('SFC src imports', async () => {
     expect(await getText('.src-imports-script')).toMatch('src="./script.ts"')
     const el = await getEl('.src-imports-style')

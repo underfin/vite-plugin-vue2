@@ -1,4 +1,4 @@
-## [1.4.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.3) (2021-04-03)
+## [1.4.4](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.4) (2021-04-19)
 
 
 ### Bug Fixes
@@ -9,6 +9,7 @@
 * babel transform ignore babelrc file ([3735379](https://github.com/underfin/vite-plugin-vue2/commit/3735379f62ec5fbcee5aaee60af23c9c383a08db)), closes [#54](https://github.com/underfin/vite-plugin-vue2/issues/54)
 * generate sourcemap ([612d2d5](https://github.com/underfin/vite-plugin-vue2/commit/612d2d5030a89823a12d5a9e78a8a764508585f3)), closes [#34](https://github.com/underfin/vite-plugin-vue2/issues/34)
 * handle jsx ([7898936](https://github.com/underfin/vite-plugin-vue2/commit/7898936cd8b00fd0b2daeb1ed3e71c838f6263ff)), closes [#56](https://github.com/underfin/vite-plugin-vue2/issues/56)
+* parse custom block code correctly. ([#66](https://github.com/underfin/vite-plugin-vue2/issues/66)) ([2d6175b](https://github.com/underfin/vite-plugin-vue2/commit/2d6175b8896dcb4c8c7ed6da81388bbb6a639e4e))
 * remove `@vue/compiler-sfc` dep ([4146ef1](https://github.com/underfin/vite-plugin-vue2/commit/4146ef1401dc13e39b1f00d882e3e399fd1307fe)), closes [#45](https://github.com/underfin/vite-plugin-vue2/issues/45)
 * start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
 * support jsx script blocks within sfc ([#53](https://github.com/underfin/vite-plugin-vue2/issues/53)) ([ec3f329](https://github.com/underfin/vite-plugin-vue2/commit/ec3f3292c260e464f5d1d456ee878d3afaa98661))

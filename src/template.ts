@@ -16,9 +16,6 @@ export function compileSFCTemplate(
     source,
     filename,
     compiler: vueTemplateCompiler as any,
-    compilerOptions: {
-      whitespace: 'condense'
-    },
     transformAssetUrls: true,
     transformAssetUrlsOptions: {
       forceRequire: true,
@@ -29,6 +26,10 @@ export function compileSFCTemplate(
     prettify: false,
     preprocessLang: block.lang,
     ...vueTemplateOptions,
+    compilerOptions: {
+      whitespace: 'condense',
+      ...(vueTemplateOptions.compilerOptions || {})
+    }
   })
 
   if (tips) {

@@ -16,6 +16,9 @@ export function compileSFCTemplate(
     source,
     filename,
     compiler: vueTemplateCompiler as any,
+    compilerOptions: {
+      whitespace: 'condense'
+    },
     transformAssetUrls: true,
     transformAssetUrlsOptions: {
       forceRequire: true,

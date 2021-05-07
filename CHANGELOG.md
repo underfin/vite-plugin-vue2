@@ -1,4 +1,4 @@
-## [1.4.4](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.4.4) (2021-04-19)
+## [1.5.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.5.1) (2021-05-07)
 
 
 ### Bug Fixes
@@ -15,6 +15,12 @@
 * support jsx script blocks within sfc ([#53](https://github.com/underfin/vite-plugin-vue2/issues/53)) ([ec3f329](https://github.com/underfin/vite-plugin-vue2/commit/ec3f3292c260e464f5d1d456ee878d3afaa98661))
 * use `esbuild` compile ts files ([378622b](https://github.com/underfin/vite-plugin-vue2/commit/378622bd81c1178cf29873e481d80292f7857c91)), closes [/github.com/underfin/vite-plugin-vue2/issues/49#issuecomment-799301238](https://github.com//github.com/underfin/vite-plugin-vue2/issues/49/issues/issuecomment-799301238)
 * use `import` rather than dynamic `require` ([#51](https://github.com/underfin/vite-plugin-vue2/issues/51)) ([650e7f5](https://github.com/underfin/vite-plugin-vue2/commit/650e7f58509bffad7c92ccb37720d5ac6bc0ce14))
+
+
+### Features
+
+* default compilerOptions: whitespace: 'condense' ([#62](https://github.com/underfin/vite-plugin-vue2/issues/62)) ([ab62cce](https://github.com/underfin/vite-plugin-vue2/commit/ab62cce0569db1bd655816d828f4000faad310dd))
+* import vue file as raw correctly ([#72](https://github.com/underfin/vite-plugin-vue2/issues/72)) ([175beb3](https://github.com/underfin/vite-plugin-vue2/commit/175beb3acc0a776c30be14e72ae3da4670326a0e))
 
 
 

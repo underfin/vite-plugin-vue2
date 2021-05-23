@@ -4,6 +4,7 @@ import { TransformPluginContext } from 'rollup'
 import { ResolvedOptions } from './index'
 import { createRollupError } from './utils/error'
 import { compileTemplate } from './template/compileTemplate'
+const identifierfy = require('identifierfy')
 
 export function compileSFCTemplate(
   source: string,
@@ -75,8 +76,7 @@ export function transformRequireToImport(code: string): string {
     /require\(("(?:[^"\\]|\\.)+"|'(?:[^'\\]|\\.)+')\)/g,
     (_, name): any => {
       if (!(name in imports)) {
-        imports[name] = `__$_require_${name
-          .replace(/[^a-z0-9]/g, '_')
+        imports[name] = `__$_require_${identifierfy(name)
           .replace(/_{2,}/g, '_')
           .replace(/^_|_$/g, '')}__`
         strImports += 'import ' + imports[name] + ' from ' + name + '\n'

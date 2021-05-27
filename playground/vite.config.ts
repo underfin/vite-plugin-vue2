@@ -8,7 +8,7 @@ const config = defineConfig({
     },
   },
   build: {
-    // sourcemap: true,
+    sourcemap: true,
     minify: false,
   },
   plugins: [

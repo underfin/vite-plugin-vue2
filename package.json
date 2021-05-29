@@ -56,11 +56,12 @@
     "querystring": "^0.2.0",
     "rollup": "^2.35.1",
     "slash": "^3.0.0",
+    "source-map": "^0.7.3",
     "vue-template-es2015-compiler": "^1.9.1"
   },
   "peerDependencies": {
-    "vue-template-compiler": "^2.2.0",
-    "vite": "^2.0.0-beta.23"
+    "vite": "^2.0.0-beta.23",
+    "vue-template-compiler": "^2.2.0"
   },
   "devDependencies": {
     "@types/consolidate": "^0.14.0",

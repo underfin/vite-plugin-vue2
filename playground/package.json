@@ -12,6 +12,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "vite": "^2.0.0-beta.23"
+    "vite": "^2.0.0-beta.23",
+    "vue-template-compiler": "^2.6.12"
   }
 }

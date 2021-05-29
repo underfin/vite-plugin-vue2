@@ -29,6 +29,7 @@ const config = defineConfig({
               }
               Object.assign(options.__customBlock, __customBlock);
             }`,
+            map: null,
           }
         }
       },

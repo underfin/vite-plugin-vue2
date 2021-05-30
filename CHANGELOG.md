@@ -1,4 +1,4 @@
-## [1.5.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.5.1) (2021-05-07)
+## [1.5.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.5.2) (2021-05-30)
 
 
 ### Bug Fixes
@@ -7,10 +7,16 @@
 * add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
 * babel transform ignore babelrc file ([3735379](https://github.com/underfin/vite-plugin-vue2/commit/3735379f62ec5fbcee5aaee60af23c9c383a08db)), closes [#54](https://github.com/underfin/vite-plugin-vue2/issues/54)
+* fix ci ([cb3b34c](https://github.com/underfin/vite-plugin-vue2/commit/cb3b34c04ea8946864621d70cd7bc8bb0a38fae0))
+* fix sourcemap for ts ([1e03983](https://github.com/underfin/vite-plugin-vue2/commit/1e0398323e62264ab374352d6a41282d5be23f73)), closes [#70](https://github.com/underfin/vite-plugin-vue2/issues/70)
+* fix test ([b43cedf](https://github.com/underfin/vite-plugin-vue2/commit/b43cedf2e4317ada078b93dfe63f80147212ec32))
 * generate sourcemap ([612d2d5](https://github.com/underfin/vite-plugin-vue2/commit/612d2d5030a89823a12d5a9e78a8a764508585f3)), closes [#34](https://github.com/underfin/vite-plugin-vue2/issues/34)
 * handle jsx ([7898936](https://github.com/underfin/vite-plugin-vue2/commit/7898936cd8b00fd0b2daeb1ed3e71c838f6263ff)), closes [#56](https://github.com/underfin/vite-plugin-vue2/issues/56)
 * parse custom block code correctly. ([#66](https://github.com/underfin/vite-plugin-vue2/issues/66)) ([2d6175b](https://github.com/underfin/vite-plugin-vue2/commit/2d6175b8896dcb4c8c7ed6da81388bbb6a639e4e))
 * remove `@vue/compiler-sfc` dep ([4146ef1](https://github.com/underfin/vite-plugin-vue2/commit/4146ef1401dc13e39b1f00d882e3e399fd1307fe)), closes [#45](https://github.com/underfin/vite-plugin-vue2/issues/45)
+* revert add sourcemap for temaplate block ([6fa3cd0](https://github.com/underfin/vite-plugin-vue2/commit/6fa3cd0beae76e5415fb7509681e76b98b4c4417))
+* rewrite asset with hash path, avoid name conflict ([b5cf6b1](https://github.com/underfin/vite-plugin-vue2/commit/b5cf6b130d15740f2f061edaf6d1610d37c70a20)), closes [#81](https://github.com/underfin/vite-plugin-vue2/issues/81)
+* source maps ([#84](https://github.com/underfin/vite-plugin-vue2/issues/84)) ([97f2ca4](https://github.com/underfin/vite-plugin-vue2/commit/97f2ca49d93712492887d43f6a18746646896527))
 * start serve with `vite preview` ([ec972fd](https://github.com/underfin/vite-plugin-vue2/commit/ec972fdd217f0ba1b8e942438a75584c9635337a))
 * support jsx script blocks within sfc ([#53](https://github.com/underfin/vite-plugin-vue2/issues/53)) ([ec3f329](https://github.com/underfin/vite-plugin-vue2/commit/ec3f3292c260e464f5d1d456ee878d3afaa98661))
 * use `esbuild` compile ts files ([378622b](https://github.com/underfin/vite-plugin-vue2/commit/378622bd81c1178cf29873e481d80292f7857c91)), closes [/github.com/underfin/vite-plugin-vue2/issues/49#issuecomment-799301238](https://github.com//github.com/underfin/vite-plugin-vue2/issues/49/issues/issuecomment-799301238)

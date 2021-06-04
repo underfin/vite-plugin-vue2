@@ -10,13 +10,7 @@ export function compileSFCTemplate(
   source: string,
   block: SFCBlock,
   filename: string,
-  {
-    root,
-    isProduction,
-    vueTemplateOptions = {},
-    devServer,
-    strictWarn,
-  }: ResolvedOptions,
+  { root, isProduction, vueTemplateOptions = {}, devServer }: ResolvedOptions,
   pluginContext: TransformPluginContext
 ) {
   const { tips, errors, code } = compileTemplate({
@@ -40,9 +34,8 @@ export function compileSFCTemplate(
   })
 
   if (tips) {
-    const tipHandler = strictWarn ? pluginContext.error : pluginContext.warn
     tips.forEach((warn) =>
-      tipHandler({
+      pluginContext.warn({
         id: filename,
         message: typeof warn === 'string' ? warn : warn.msg,
       })

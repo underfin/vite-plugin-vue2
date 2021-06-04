@@ -36,12 +36,6 @@ export interface VueViteOptions {
    */
   jsx?: boolean
   /**
-   * The options for template-compiler warn handle,
-   * true = no warn, false = Allow warn
-   * @default false
-   */
-  strictWarn?: boolean
-  /**
    * The options for `@vue/babel-preset-jsx`
    */
   jsxOptions?: Record<string, any>

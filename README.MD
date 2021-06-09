@@ -15,6 +15,11 @@ module.exports = {
 
 ## [Options](https://github.com/underfin/vite-plugin-vue2/blob/master/src/index.ts#L26)
 
+### `vueTemplateCompiler`
+
+Type: `Object`<br>
+
+You can custom `vue-template-compiler` version or other compiler.
 ### `vueTemplateOptions`
 
 Type: `Object`<br>

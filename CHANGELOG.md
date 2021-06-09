@@ -1,4 +1,4 @@
-## [1.5.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.5.2) (2021-05-30)
+## [1.6.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.6.2) (2021-06-03)
 
 
 ### Bug Fixes
@@ -12,6 +12,7 @@
 * fix test ([b43cedf](https://github.com/underfin/vite-plugin-vue2/commit/b43cedf2e4317ada078b93dfe63f80147212ec32))
 * generate sourcemap ([612d2d5](https://github.com/underfin/vite-plugin-vue2/commit/612d2d5030a89823a12d5a9e78a8a764508585f3)), closes [#34](https://github.com/underfin/vite-plugin-vue2/issues/34)
 * handle jsx ([7898936](https://github.com/underfin/vite-plugin-vue2/commit/7898936cd8b00fd0b2daeb1ed3e71c838f6263ff)), closes [#56](https://github.com/underfin/vite-plugin-vue2/issues/56)
+* move vue-template-compiler to dependencies ([#87](https://github.com/underfin/vite-plugin-vue2/issues/87)) ([0de32c9](https://github.com/underfin/vite-plugin-vue2/commit/0de32c941d8aba66182460470dc990b11584ba0c))
 * parse custom block code correctly. ([#66](https://github.com/underfin/vite-plugin-vue2/issues/66)) ([2d6175b](https://github.com/underfin/vite-plugin-vue2/commit/2d6175b8896dcb4c8c7ed6da81388bbb6a639e4e))
 * remove `@vue/compiler-sfc` dep ([4146ef1](https://github.com/underfin/vite-plugin-vue2/commit/4146ef1401dc13e39b1f00d882e3e399fd1307fe)), closes [#45](https://github.com/underfin/vite-plugin-vue2/issues/45)
 * revert add sourcemap for temaplate block ([6fa3cd0](https://github.com/underfin/vite-plugin-vue2/commit/6fa3cd0beae76e5415fb7509681e76b98b4c4417))
@@ -25,6 +26,7 @@
 
 ### Features
 
+* add `vueTemplateCompiler` option ([3274c05](https://github.com/underfin/vite-plugin-vue2/commit/3274c05b3c5300282adbc3a9eb0375b8746e9f06)), closes [#76](https://github.com/underfin/vite-plugin-vue2/issues/76)
 * default compilerOptions: whitespace: 'condense' ([#62](https://github.com/underfin/vite-plugin-vue2/issues/62)) ([ab62cce](https://github.com/underfin/vite-plugin-vue2/commit/ab62cce0569db1bd655816d828f4000faad310dd))
 * import vue file as raw correctly ([#72](https://github.com/underfin/vite-plugin-vue2/issues/72)) ([175beb3](https://github.com/underfin/vite-plugin-vue2/commit/175beb3acc0a776c30be14e72ae3da4670326a0e))
 

@@ -1,14 +1,15 @@
-## [1.7.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.7.2) (2021-06-27)
+## [1.7.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.7.3) (2021-07-11)
 
 
 ### Bug Fixes
 
+* add pure annotations for tree shaking support ([#105](https://github.com/underfin/vite-plugin-vue2/issues/105)) ([3622dae](https://github.com/underfin/vite-plugin-vue2/commit/3622dae6f1d6b3cdebec3a5268b8768ece8d00b2))
 * **deps:** move `vue-template-compiler` to peerDependencies ([4de9cb8](https://github.com/underfin/vite-plugin-vue2/commit/4de9cb8242551f1f0348e71f5acdb938c750f527))
-* add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
+* add `filename` option for compile jsx ([f8cd9c4](https://github.com/underfin/vite-plugin-vue2/commit/f8cd9c4b2bbbf6c7159f07833f888be8deac9d6f)), closes [#58](https://github.com/underfin/vite-plugin-vue2/issues/58)
 * babel transform ignore babel.config.js file ([#78](https://github.com/underfin/vite-plugin-vue2/issues/78)) ([89cd5ed](https://github.com/underfin/vite-plugin-vue2/commit/89cd5edf72b3e6e62b266b91d9c7afeb6a614f1c))
 * expose file's full path in development ([#99](https://github.com/underfin/vite-plugin-vue2/issues/99)) ([eb26e6e](https://github.com/underfin/vite-plugin-vue2/commit/eb26e6ea588224a37b727e12d7fd852fe19d3622))
 * **template:** tips shouldn't use error to throw, should be use warn ([#89](https://github.com/underfin/vite-plugin-vue2/issues/89)) ([0deeaba](https://github.com/underfin/vite-plugin-vue2/commit/0deeabaa2b3033ab78d50cb41fa1f04ea48686d8))
-* add `filename` option for compile jsx ([f8cd9c4](https://github.com/underfin/vite-plugin-vue2/commit/f8cd9c4b2bbbf6c7159f07833f888be8deac9d6f)), closes [#58](https://github.com/underfin/vite-plugin-vue2/issues/58)
+* add default `doctype` option for pug ([65bcf92](https://github.com/underfin/vite-plugin-vue2/commit/65bcf92b99c50a727063057eb40ffaf1d40961ef))
 * add typescript support for jsx ([ee72c09](https://github.com/underfin/vite-plugin-vue2/commit/ee72c095e1938baf683ce107ec6a2a5062ee8916)), closes [#49](https://github.com/underfin/vite-plugin-vue2/issues/49) [#44](https://github.com/underfin/vite-plugin-vue2/issues/44)
 * babel transform ignore babelrc file ([3735379](https://github.com/underfin/vite-plugin-vue2/commit/3735379f62ec5fbcee5aaee60af23c9c383a08db)), closes [#54](https://github.com/underfin/vite-plugin-vue2/issues/54)
 * fix ci ([cb3b34c](https://github.com/underfin/vite-plugin-vue2/commit/cb3b34c04ea8946864621d70cd7bc8bb0a38fae0))

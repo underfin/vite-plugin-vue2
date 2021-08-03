@@ -16,7 +16,7 @@ export async function transformStyle(
     filename,
     id: `data-v-${descriptor.id}`,
     map: pluginContext.getCombinedSourcemap(),
-    scoped: !!block.scoped,
+    scoped: !!block?.scoped,
     trim: true,
   })
 

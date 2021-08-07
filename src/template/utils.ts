@@ -16,7 +16,12 @@ export function urlToRequire(
   transformAssetUrlsOption: TransformAssetUrlsOptions = {}
 ): string {
   const returnValue = `"${url}"`
-  if (isExternalUrl(url) || isDataUrl(url) || isHashUrl(url)) {
+  if (
+    isExternalUrl(url) ||
+    isDataUrl(url) ||
+    isHashUrl(url) ||
+    isNoProtocolImgUrlRe(url)
+  ) {
     return returnValue
   }
   // same logic as in transform-require.js
@@ -59,6 +64,11 @@ export function isExternalUrl(url: string): boolean {
 const dataUrlRE = /^\s*data:/i
 export function isDataUrl(url: string): boolean {
   return dataUrlRE.test(url)
+}
+
+const noProtocolImgUrlRe = /^(\/\/)[\s\S]+\.(jpe?g|png|svg|gif|webp|ico)/
+export function isNoProtocolImgUrlRe(url: string): boolean {
+  return noProtocolImgUrlRe.test(url)
 }
 
 /**

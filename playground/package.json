@@ -9,7 +9,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.6",
+    "vue-property-decorator": "9.1.2"
   },
   "devDependencies": {
     "vite": "^2.0.0-beta.23",

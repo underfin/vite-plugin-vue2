@@ -1,4 +1,4 @@
-# [1.8.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.8.0) (2021-08-09)
+## [1.8.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.2.2...v1.8.1) (2021-08-15)
 
 
 ### Bug Fixes
@@ -33,6 +33,7 @@
 ### Features
 
 * add `vueTemplateCompiler` option ([3274c05](https://github.com/underfin/vite-plugin-vue2/commit/3274c05b3c5300282adbc3a9eb0375b8746e9f06)), closes [#76](https://github.com/underfin/vite-plugin-vue2/issues/76)
+* add allowDeclareFields for babel ts option ([#120](https://github.com/underfin/vite-plugin-vue2/issues/120)) ([798953a](https://github.com/underfin/vite-plugin-vue2/commit/798953af7b273c8d31677632c94c7e1252c956ff))
 * default compilerOptions: whitespace: 'condense' ([#62](https://github.com/underfin/vite-plugin-vue2/issues/62)) ([ab62cce](https://github.com/underfin/vite-plugin-vue2/commit/ab62cce0569db1bd655816d828f4000faad310dd))
 * import vue file as raw correctly ([#72](https://github.com/underfin/vite-plugin-vue2/issues/72)) ([175beb3](https://github.com/underfin/vite-plugin-vue2/commit/175beb3acc0a776c30be14e72ae3da4670326a0e))
 * improve codegen compat, use var __component__ insteadof var component ([#115](https://github.com/underfin/vite-plugin-vue2/issues/115)) ([77d3cac](https://github.com/underfin/vite-plugin-vue2/commit/77d3cac77afdd180ea3c4d46d261d388075096c3))

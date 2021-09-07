@@ -7,8 +7,9 @@
     "dev": "tsc -w -p . --incremental --skipLibCheck",
     "test": "jest --clearCache && jest --runInBand --forceExit",
     "build": "rm -rf dist && tsc -p . --skipLibCheck",
+    "release": "bumpp -x 'yarn changelog' --all --push --commit --tag && yarn release",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "prepublishOnly": "yarn build && yarn changelog"
+    "prepublishOnly": "yarn build"
   },
   "files": [
     "dist"
@@ -73,6 +74,7 @@
     "@types/jest": "^26.0.4",
     "@types/node": "^14.0.14",
     "@types/puppeteer": "^3.0.1",
+    "bumpp": "^7.1.1",
     "conventional-changelog-cli": "^2.0.34",
     "execa": "^4.0.2",
     "jest": "^26.1.0",

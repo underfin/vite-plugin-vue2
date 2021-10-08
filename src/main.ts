@@ -7,6 +7,7 @@ import path from 'path'
 import fs from 'fs'
 import { TransformPluginContext } from 'rollup'
 import { RawSourceMap, SourceMapGenerator } from 'source-map'
+import { transformRequireToImport } from './utils/transformCjs'
 
 export async function transformMain(
   code: string,
@@ -44,7 +45,7 @@ export async function transformMain(
   )
 
   let result =
-    `${scriptCode}
+    `${transformRequireToImport(scriptCode)}
 ${templateCode}
 const ${cssModuleVar} = {}
 ${stylesCode}

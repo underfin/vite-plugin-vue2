@@ -57,13 +57,13 @@
     "magic-string": "^0.25.7",
     "prettier": "^2.0.5",
     "querystring": "^0.2.0",
-    "rollup": "^2.35.1",
     "slash": "^3.0.0",
     "source-map": "^0.7.3",
     "vue-template-es2015-compiler": "^1.9.1"
   },
   "peerDependencies": {
-    "vite": "^2.0.0-beta.23",
+    "rollup": "^2.38.4",
+    "vite": "^2.4.4",
     "vue-template-compiler": "^2.2.0"
   },
   "devDependencies": {
@@ -82,7 +82,7 @@
     "puppeteer": "^3.0.0",
     "ts-jest": "^26.1.1",
     "typescript": "^4.1.2",
-    "vite": "^2.0.5",
+    "vite": "^2.6.5",
     "vue-template-compiler": "^2.6.12",
     "yorkie": "^2.0.0"
   }

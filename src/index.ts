@@ -3,6 +3,7 @@ import { normalizeComponentCode } from './utils/componentNormalizer'
 import { vueHotReloadCode } from './utils/vueHotReload'
 import fs from 'fs'
 import { parseVueRequest } from './utils/query'
+import { TransformPluginContext } from 'rollup'
 import { createFilter } from '@rollup/pluginutils'
 import { transformMain } from './main'
 import { compileSFCTemplate } from './template'
@@ -151,7 +152,12 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
 
       if (!query.vue) {
         // main request
-        return await transformMain(code, filename, options, this)
+        return await transformMain(
+          code,
+          filename,
+          options,
+          this as TransformPluginContext
+        )
       }
 
       const descriptor = getDescriptor(query.from || filename)!
@@ -162,7 +168,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
           descriptor.template!,
           filename,
           options,
-          this
+          this as TransformPluginContext
         )
       }
       if (query.type === 'style') {
@@ -171,7 +177,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
           filename,
           descriptor,
           Number(query.index),
-          this
+          this as TransformPluginContext
         )
       }
     },

@@ -12,6 +12,7 @@ import { ViteDevServer, Plugin } from 'vite'
 import { SFCBlock } from '@vue/component-compiler-utils'
 import { handleHotUpdate } from './hmr'
 import { transformVueJsx } from './jsxTransform'
+import { transformRequireToImport } from './utils/transformCjs'
 
 export const vueComponentNormalizer = '\0/vite/vueComponentNormalizer'
 export const vueHotReload = '\0/vite/vueHotReload'
@@ -142,6 +143,11 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
 
       if (/\.(tsx|jsx)$/.test(id)) {
         return transformVueJsx(code, id, options.jsxOptions)
+      }
+
+      if (!query.vue && !filter(filename) && /\.js$/.test(id)) {
+        // raw js request
+        return transformRequireToImport(code)
       }
 
       if ((!query.vue && !filter(filename)) || query.raw) {

@@ -45,7 +45,7 @@ export async function transformMain(
   )
 
   let result =
-    `${transformRequireToImport(scriptCode)}
+    `${transformRequireToImport(scriptCode).code}
 ${templateCode}
 const ${cssModuleVar} = {}
 ${stylesCode}

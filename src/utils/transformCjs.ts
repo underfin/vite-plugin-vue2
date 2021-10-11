@@ -1,6 +1,7 @@
 import hash from 'hash-sum'
+import { SourceDescription } from 'rollup'
 
-export function transformRequireToImport(code: string): string {
+export function transformRequireToImport(code: string): SourceDescription {
   const imports: { [key: string]: string } = {}
   let strImports = ''
 
@@ -17,5 +18,9 @@ export function transformRequireToImport(code: string): string {
     }
   )
 
-  return strImports + code
+  // TODO sourcemap
+  return {
+    code: strImports + code,
+    map: null,
+  }
 }

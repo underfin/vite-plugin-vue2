@@ -69,7 +69,8 @@ export function compileSFCTemplate(
   // rewrite require calls to import on build
   return {
     code:
-      transformRequireToImport(code) + `\nexport { render, staticRenderFns }`,
+      transformRequireToImport(code).code +
+      `\nexport { render, staticRenderFns }`,
     map: null,
   }
 }

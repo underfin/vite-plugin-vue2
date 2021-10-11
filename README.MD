@@ -39,6 +39,12 @@ Type: `Object`<br>
 
 The options for `@vue/babel-preset-jsx`.
 
+### `target`
+
+Type: `String`<br>
+
+The options for esbuild to transform script code
+
 ## Todo
 
 - SSR Build

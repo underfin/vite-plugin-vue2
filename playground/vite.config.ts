@@ -10,6 +10,15 @@ const config = defineConfig({
   build: {
     sourcemap: true,
     minify: false,
+    rollupOptions: {
+      onwarn(warning, warningHandler) {
+        if (warning.code === 'SOURCEMAP_BROKEN') {
+          // TODO generate sourcemap
+          return
+        }
+        warningHandler(warning)
+      },
+    },
   },
   plugins: [
     createVuePlugin({ jsx: true }),

@@ -10,10 +10,12 @@ npm install vite-plugin-vue2 -D
 
 ```js
 // vite.config.js
-const { createVuePlugin } = require('vite-plugin-vue2')
+import { createVuePlugin } from 'vite-plugin-vue2'
 
-module.exports = {
-  plugins: [createVuePlugin(/*options*/)],
+export default {
+  plugins: [
+    createVuePlugin(/* options */)
+  ],
 }
 ```
 

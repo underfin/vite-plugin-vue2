@@ -24,7 +24,17 @@ export default {
 ### `vueTemplateOptions`
 
 Type: `Object`<br>
-Default: `null`
+
+Default: `{ compilerOptions :{ whitespace: 'condense' }   }`
+
+**Note {  whitespace: 'condense' } behavior**
+
+* A whitespace-only text node between element tags is removed if it contains new lines. Otherwise, it is condensed into a single space.
+
+* Consecutive whitespaces inside a non-whitespace-only text node are condensed into a single space.
+
+
+Using condense mode will result in smaller compiled code size and slightly improved performance. However, it will produce minor visual layout differences compared to plain HTML in certain cases,if you want to keep whitespace  behavior, please set `{ whitespace: 'preserve' }`
 
 The options for `@vue/component-compiler-utils`.
 

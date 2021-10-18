@@ -1,4 +1,19 @@
-## 1.8.2 (2021-09-07)
+# [1.9.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.8.2...v1.9.0) (2021-10-15)
+
+
+### Bug Fixes
+
+* hmr doesn't work when modifying the code of jsx in sfc（[#88](https://github.com/underfin/vite-plugin-vue2/issues/88)） ([#137](https://github.com/underfin/vite-plugin-vue2/issues/137)) ([66d6485](https://github.com/underfin/vite-plugin-vue2/commit/66d648574e634c962ecd38e2ac919c485bff74a6))
+* prevent error when SFC script contains variable named render ([#145](https://github.com/underfin/vite-plugin-vue2/issues/145)) ([7a6f9e9](https://github.com/underfin/vite-plugin-vue2/commit/7a6f9e9a7970683b828bee11893be285bf0a002f))
+
+
+### Features
+
+* add 'target' options for transform script code ([#141](https://github.com/underfin/vite-plugin-vue2/issues/141)) ([940ec45](https://github.com/underfin/vite-plugin-vue2/commit/940ec45a3fd68bd9ba1b1a8808d96e6cbce13207))
+
+
+
+## [1.8.2](https://github.com/underfin/vite-plugin-vue2/compare/71c768aedcc708f09b1a5b29c29facfede7bae44...v1.8.2) (2021-09-07)
 
 
 ### Bug Fixes

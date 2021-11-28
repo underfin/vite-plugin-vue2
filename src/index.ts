@@ -40,9 +40,11 @@ export interface VueViteOptions {
    */
   jsxOptions?: Record<string, any>
   /**
-   * The options for esbuld to transform script code
+   * The options for esbuild to transform script code
+   * @default 'esnext'
+   * @example 'esnext' | ['esnext','chrome58','firefox57','safari11','edge16','node12']
    */
-  target?: string
+  target?: string | string[]
 }
 
 export interface ResolvedOptions extends VueViteOptions {

@@ -192,7 +192,9 @@ async function genTemplateRequest(
   const query = `?vue${from}&type=template${srcQuery}${attrsQuery}`
   const templateRequest = src + query
   return {
-    code: `import { render as __vue2_render, staticRenderFns as __vue2_staticRenderFns } from '${templateRequest}'`,
+    code: `import { render as __vue2_render, staticRenderFns as __vue2_staticRenderFns } from ${JSON.stringify(
+      templateRequest
+    )}`,
     templateRequest,
   }
 }
@@ -229,26 +231,26 @@ function genHmrCode(
   functional: boolean,
   templateRequest?: string
 ) {
+  const idJSON = JSON.stringify(id)
   return `\n/* hot reload */
-import __VUE_HMR_RUNTIME__ from "${vueHotReload}"
+import __VUE_HMR_RUNTIME__ from ${JSON.stringify(vueHotReload)}
 import vue from "vue"
 __VUE_HMR_RUNTIME__.install(vue)
 if(__VUE_HMR_RUNTIME__.compatible){
-  if (!__VUE_HMR_RUNTIME__.isRecorded('${id}')) {
-    __VUE_HMR_RUNTIME__.createRecord('${id}', __component__.options)
+  if (!__VUE_HMR_RUNTIME__.isRecorded(${idJSON})) {
+    __VUE_HMR_RUNTIME__.createRecord(${idJSON}, __component__.options)
   }
    import.meta.hot.accept((update) => {
       __VUE_HMR_RUNTIME__.${
         functional ? 'rerender' : 'reload'
-      }('${id}', update.default)
+      }(${idJSON}, update.default)
    })
    ${
      templateRequest
-       ? `import.meta.hot.accept('${normalizeDevPath(
-           root,
-           templateRequest
-         )}', (update) => {
-      __VUE_HMR_RUNTIME__.rerender('${id}', update)
+       ? `import.meta.hot.accept(${JSON.stringify(
+           normalizeDevPath(root, templateRequest)
+         )}, (update) => {
+      __VUE_HMR_RUNTIME__.rerender(${idJSON}, update)
    })`
        : ''
    }

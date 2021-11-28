@@ -51,7 +51,7 @@ export interface ResolvedOptions extends VueViteOptions {
   root: string
   devServer?: ViteDevServer
   isProduction: boolean
-  target?: string
+  target?: string | string[]
 }
 
 export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {

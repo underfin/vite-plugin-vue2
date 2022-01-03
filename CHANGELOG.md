@@ -1,3 +1,12 @@
+## [1.9.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.1...v1.9.2) (2022-01-03)
+
+
+### Bug Fixes
+
+* ensure HMR stays working in SSR ([#160](https://github.com/underfin/vite-plugin-vue2/issues/160)) ([2cb9e0f](https://github.com/underfin/vite-plugin-vue2/commit/2cb9e0f68b5fc14fb69c7bb9ec69cae904d55f5e))
+
+
+
 ## [1.9.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.0...v1.9.1) (2022-01-03)
 
 

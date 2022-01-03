@@ -139,7 +139,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
       }
     },
 
-    async transform(code, id) {
+    async transform(code, id, transformOptions) {
       const { filename, query } = parseVueRequest(id)
 
       if (/\.(tsx|jsx)$/.test(id)) {
@@ -152,7 +152,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
 
       if (!query.vue) {
         // main request
-        return await transformMain(code, filename, options, this)
+        return await transformMain(code, filename, options, transformOptions, this)
       }
 
       const descriptor = getDescriptor(

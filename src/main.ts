@@ -13,6 +13,7 @@ export async function transformMain(
   code: string,
   filePath: string,
   options: ResolvedOptions,
+  transformOptions: any,
   pluginContext: TransformPluginContext
 ) {
   const descriptor = createDescriptor(code, filePath, options)
@@ -86,7 +87,7 @@ function __vue2_injectStyles (context) {
   // 	code += `\n__component__.options.__file = ${JSON.stringify(filePath)}`
   // }
 
-  if (options.devServer && !options.isProduction) {
+  if (!transformOptions.ssr && options.devServer && !options.isProduction) {
     result += genHmrCode(
       options.root,
       descriptor.id,

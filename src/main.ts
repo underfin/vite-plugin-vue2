@@ -7,6 +7,7 @@ import path from 'path'
 import fs from 'fs'
 import { TransformPluginContext } from 'rollup'
 import { RawSourceMap, SourceMapGenerator } from 'source-map'
+import * as Vite from 'vite'
 
 export async function transformMain(
   code: string,
@@ -150,7 +151,10 @@ async function genScriptCode(
       }
       map = script.map
       if (script.lang === 'ts') {
-        const result = await options.devServer!.transformWithEsbuild(
+        // transformWithEsbuild has been exported since vite@2.6.0-beta.0
+        const transformWithEsbuild =
+          Vite.transformWithEsbuild ?? options.devServer!.transformWithEsbuild
+        const result = await transformWithEsbuild(
           scriptCode,
           filename,
           { loader: 'ts', target: options.target },
@@ -158,6 +162,13 @@ async function genScriptCode(
         )
         scriptCode = result.code
         map = result.map
+        // restore esbuild missing sourcemap fields from previous compilation
+        if (!map.file && script.map?.file) {
+          map.file = script.map.file
+        }
+        if (!map.sourcesContent && script.map?.sourcesContent) {
+          map.sourcesContent = script.map.sourcesContent
+        }
       }
     } else {
       const src = script.src || filename

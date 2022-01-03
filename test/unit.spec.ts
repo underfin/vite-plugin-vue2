@@ -21,6 +21,7 @@ describe('vite-plugin-vue2', () => {
           devServer: {},
         },
         // @ts-ignore need mock if it will be used in the future
+        {},
         {}
       )
       expect(scriptMap).toHaveProperty('file')

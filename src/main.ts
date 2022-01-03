@@ -13,7 +13,6 @@ export async function transformMain(
   code: string,
   filePath: string,
   options: ResolvedOptions,
-  transformOptions: any,
   pluginContext: TransformPluginContext
 ) {
   const descriptor = createDescriptor(code, filePath, options)
@@ -87,7 +86,7 @@ function __vue2_injectStyles (context) {
   // 	code += `\n__component__.options.__file = ${JSON.stringify(filePath)}`
   // }
 
-  if (!transformOptions.ssr && options.devServer && !options.isProduction) {
+  if (options.devServer && !options.isProduction) {
     result += genHmrCode(
       options.root,
       descriptor.id,
@@ -250,7 +249,7 @@ function genHmrCode(
 import __VUE_HMR_RUNTIME__ from ${JSON.stringify(vueHotReload)}
 import vue from "vue"
 __VUE_HMR_RUNTIME__.install(vue)
-if(__VUE_HMR_RUNTIME__.compatible){
+if(!import.meta.env.SSR && __VUE_HMR_RUNTIME__.compatible){
   if (!__VUE_HMR_RUNTIME__.isRecorded(${idJSON})) {
     __VUE_HMR_RUNTIME__.createRecord(${idJSON}, __component__.options)
   }
@@ -268,8 +267,6 @@ if(__VUE_HMR_RUNTIME__.compatible){
    })`
        : ''
    }
-} else {
-  console.log("The hmr is not compatible.")
 }`
 }
 

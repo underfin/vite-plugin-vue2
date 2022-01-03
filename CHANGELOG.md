@@ -1,3 +1,17 @@
+## [1.9.1](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.0...v1.9.1) (2022-01-03)
+
+
+### Bug Fixes
+
+* consider window path at set descriptor cache ([bdfabc9](https://github.com/underfin/vite-plugin-vue2/commit/bdfabc99e8c50930bca5d9144cb1634f40609904)), closes [#129](https://github.com/underfin/vite-plugin-vue2/issues/129)
+* don't inject hmr code in SSR ([#159](https://github.com/underfin/vite-plugin-vue2/issues/159)) ([d84ffec](https://github.com/underfin/vite-plugin-vue2/commit/d84ffecbac16b0bf28c72d285965c82a147a703b))
+* missing sourcemap fields after compiling ts in dev ([#158](https://github.com/underfin/vite-plugin-vue2/issues/158)) ([ee1ff2e](https://github.com/underfin/vite-plugin-vue2/commit/ee1ff2e178426e6ef210a47d1cf8182423ad6e77))
+* no corresponding SFC entry in the cache ([#155](https://github.com/underfin/vite-plugin-vue2/issues/155)) ([e1db32c](https://github.com/underfin/vite-plugin-vue2/commit/e1db32c0700294b723e6a9c3ac97fee315d06891))
+* use correct target types ([f44ecea](https://github.com/underfin/vite-plugin-vue2/commit/f44ecead082014860a5ae8b34264ac0226fa4fa8))
+* windows path contains \u symbols ([#152](https://github.com/underfin/vite-plugin-vue2/issues/152)) ([#154](https://github.com/underfin/vite-plugin-vue2/issues/154)) ([cddd1e9](https://github.com/underfin/vite-plugin-vue2/commit/cddd1e9ff0f0c842478455771f737b5d1aa122d4))
+
+
+
 # [1.9.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.8.2...v1.9.0) (2021-10-15)
 
 

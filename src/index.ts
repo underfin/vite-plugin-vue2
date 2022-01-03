@@ -152,7 +152,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
 
       if (!query.vue) {
         // main request
-        return await transformMain(code, filename, options, transformOptions, this)
+        return await transformMain(code, filename, options, this)
       }
 
       const descriptor = getDescriptor(

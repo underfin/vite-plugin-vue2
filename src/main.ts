@@ -107,7 +107,7 @@ function __vue2_injectStyles (context) {
     map = JSON.parse(emptyMapGen.toString())
   }
 
-  result += `\nexport default /*#__PURE__*/(function () { return __component__.exports })()`
+  result += `\nexport default (function () { return __component__.exports })()`
   return {
     code: result,
     map,

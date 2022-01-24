@@ -5,6 +5,7 @@ import {
   setPrevDescriptor,
 } from './utils/descriptorCache'
 import { ModuleNode, HmrContext } from 'vite'
+import { isCSSRequest } from './utils/css'
 import { ResolvedOptions } from './index'
 import { SFCBlock } from '@vue/component-compiler-utils'
 
@@ -114,6 +115,12 @@ export async function handleHotUpdate(
     // template is inlined into main, add main module instead
     if (!templateModule) {
       affectedModules.add(mainModule)
+    } else if (mainModule) {
+      for (const importer of mainModule.importers) {
+        if (isCSSRequest(importer.url)) {
+          affectedModules.add(importer)
+        }
+      }
     }
   }
   if (didUpdateStyle) {

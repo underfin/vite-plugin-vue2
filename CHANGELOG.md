@@ -1,3 +1,13 @@
+## [1.9.3](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.2...v1.9.3) (2022-01-25)
+
+
+### Bug Fixes
+
+* fixed HMR of styles on template change ([#153](https://github.com/underfin/vite-plugin-vue2/issues/153)) ([#170](https://github.com/underfin/vite-plugin-vue2/issues/170)) ([38b6d4f](https://github.com/underfin/vite-plugin-vue2/commit/38b6d4f569c203cd0ed74d85f0a46f29d27dc301))
+* update babel dependencies ([#166](https://github.com/underfin/vite-plugin-vue2/issues/166)) ([bf46e25](https://github.com/underfin/vite-plugin-vue2/commit/bf46e2595819dfb5625aa24a3f28069f7c86a04d))
+
+
+
 ## [1.9.2](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.1...v1.9.2) (2022-01-03)
 
 

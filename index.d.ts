@@ -1,1 +1,1 @@
-declare module 'vue-template-es2015-compiler'
+declare module 'vue-template-babel-compiler'

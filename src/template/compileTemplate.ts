@@ -11,7 +11,8 @@ import assetUrlsModule, {
 import srcsetModule from './srcset'
 
 import consolidate from 'consolidate'
-import transpile from 'vue-template-es2015-compiler'
+
+import transpile from 'vue-template-babel-compiler'
 
 export interface TemplateCompileOptions {
   source: string
@@ -163,11 +164,10 @@ function actuallyCompile(
     // transpile code with vue-template-es2015-compiler, which is a forked
     // version of Buble that applies ES2015 transforms + stripping `with` usage
     let code =
-      transpile(
-        `var __render__ = ${toFunction(render)}\n` +
-          `var __staticRenderFns__ = [${staticRenderFns.map(toFunction)}]`,
-        finalTranspileOptions
-      ) + `\n`
+      `var __render__ = ${toFunction(render)}\n` +
+      `var __staticRenderFns__ = [${staticRenderFns.map(toFunction)}]`
+
+    code = transpile(code, finalTranspileOptions) + `\n`
 
     // #23 we use __render__ to avoid `render` not being prefixed by the
     // transpiler when stripping with, but revert it back to `render` to

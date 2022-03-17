@@ -152,7 +152,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
 
       if (!query.vue) {
         // main request
-        return await transformMain(code, filename, options, this)
+        return await transformMain(code, filename, options, this as any)
       }
 
       const descriptor = getDescriptor(
@@ -165,7 +165,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
           descriptor.template!,
           filename,
           options,
-          this
+          this as any
         )
       }
       if (query.type === 'style') {
@@ -174,7 +174,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
           filename,
           descriptor,
           Number(query.index),
-          this
+          this as any
         )
       }
     },

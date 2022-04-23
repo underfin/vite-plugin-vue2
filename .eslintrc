@@ -1,5 +1,8 @@
 {
   "extends": "@antfu",
+  "rules": {
+    "react/no-unknown-property": "off",
+  },
   "overrides": [
     {
       "files": "test/**/*.*",

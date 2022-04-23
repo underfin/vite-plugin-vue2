@@ -16,9 +16,7 @@ export async function preTest() {
     await fs.remove(tempDir)
   }
   catch (e) {}
-  await fs.copy(fixtureDir, tempDir, {
-    filter: file => !/dist|node_modules/.test(file),
-  })
+  await fs.copy(fixtureDir, tempDir)
   binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
 
   await build()
@@ -50,7 +48,7 @@ export async function startServer(isBuild: boolean) {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
     // Enable if puppeteer can't detect chrome's path on MacOS
     // executablePath:
-    //   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   })
 
   await new Promise((resolve) => {

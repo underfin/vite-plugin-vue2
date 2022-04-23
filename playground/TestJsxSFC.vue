@@ -3,7 +3,7 @@ const word = 'JSX & SFC works!'
 
 export default {
   render() {
-    return <div className={'jsx-sfc'}> {word} </div>
+    return <div class={'jsx-sfc'}> {word} </div>
   },
 }
 </script>

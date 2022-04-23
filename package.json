@@ -2,6 +2,7 @@
   "name": "vite-plugin-vue2",
   "version": "1.9.3",
   "description": "Vite plugin for Vue2",
+  "packageManager": "pnpm@6.32.3",
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsc -w -p . --incremental --skipLibCheck",

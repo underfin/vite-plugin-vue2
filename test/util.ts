@@ -1,6 +1,6 @@
 import path from 'path'
 import fs from 'fs-extra'
-import { execa } from 'execa'
+import execa from 'execa'
 import type { ElementHandle } from 'puppeteer'
 import puppeteer from 'puppeteer'
 

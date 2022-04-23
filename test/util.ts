@@ -17,7 +17,6 @@ export async function preTest() {
   await fs.copy(fixtureDir, tempDir, {
     filter: (file) => !/dist|node_modules/.test(file),
   })
-  await execa('yarn', { cwd: tempDir })
   binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
 
   await build()

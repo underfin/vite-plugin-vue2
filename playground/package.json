@@ -14,8 +14,8 @@
     "vue-property-decorator": "9.1.2"
   },
   "devDependencies": {
-    "@vue/runtime-dom": "^3.2.31",
-    "vite": "^2.8.6",
-    "vue-template-babel-compiler": "^1.1.3"
+    "@vue/runtime-dom": "^3.2.33",
+    "vite": "^2.9.5",
+    "vue-template-babel-compiler": "^1.2.0"
   }
 }

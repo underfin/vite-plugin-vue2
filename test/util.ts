@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import path from 'path'
-import execa from 'execa'
+import { execa } from 'execa'
 import puppeteer, { ElementHandle } from 'puppeteer'
 
 let devServer: any

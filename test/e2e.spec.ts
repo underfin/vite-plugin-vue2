@@ -33,7 +33,7 @@ export function declareTests(isBuild: boolean) {
   let page: puppeteer.Page = undefined!
 
   beforeAll(async() => {
-    page = await startServer(false)
+    page = await startServer(isBuild)
   })
 
   afterAll(async() => {

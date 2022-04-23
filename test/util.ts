@@ -46,6 +46,9 @@ export async function startServer(isBuild: boolean) {
 
   browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    // Enable if puppeteer can't detect chrome's path on MacOS
+    // executablePath:
+    //   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   })
 
   await new Promise((resolve) => {

@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2019",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "strict": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "removeComments": false,
+    "experimentalDecorators": true,
+    "module": "ESNext",
+    "lib": ["esnext", "dom"],
+    "sourceMap": true
+  },
+  "include": ["./"],
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 2,
+    "experimentalTemplateCompilerOptions": {
+      "compatConfig": { "Mode": 2 }
+    }
+  }
+}

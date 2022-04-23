@@ -1,16 +1,17 @@
 <template>
   <div>
     <h1>Vite-Plugin-Vue2 Playground</h1>
-    <TestMultiplySrcImport/>
-    <TestBlockSrcImport/>
-    <TestScopedCss/>
-    <TestCssModules/>
-    <TestCustomBlock/>
-    <TestHmr/>
-    <TestAssets/>
-    <TestJsx/>
-    <TestJsxSFC/> 
-    <TestDecorator/>
+    <TestMultiplySrcImport />
+    <TestBlockSrcImport />
+    <TestScopedCss />
+    <TestCssModules />
+    <TestCustomBlock />
+    <TestHmr />
+    <TestAssets />
+    <TestJsx />
+    <TestJsxSFC />
+    <TestDecorator />
+    <TestES2020Features />
   </div>
 </template>
 
@@ -25,6 +26,7 @@ import TestAssets from './test-assets/TestAssets.vue'
 import TestJsx from './TestJsx.tsx'
 import TestJsxSFC from './TestJsxSFC.vue'
 import TestDecorator from './TestDecorator.tsx'
+import TestES2020Features from './TestES2020Features.vue'
 
 export default {
   name: 'App',
@@ -38,7 +40,8 @@ export default {
     TestAssets,
     TestJsx,
     TestJsxSFC,
-    TestDecorator
-  }
+    TestDecorator,
+    TestES2020Features,
+  },
 }
 </script>

@@ -1,9 +1,9 @@
 <script lang="tsx">
-const word: string = 'JSX & SFC works!'
+const word = 'JSX & SFC works!'
 
 export default {
-	render() {
-		return <div class={'jsx-sfc'}> {word} </div>
-	}
+  render() {
+    return <div className={'jsx-sfc'}> {word} </div>
+  },
 }
 </script>

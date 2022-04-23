@@ -1,7 +1,8 @@
 // vue compiler module for transforming `img:srcset` to a number of `require`s
 
-import { urlToRequire, ASTNode } from './utils'
-import { TransformAssetUrlsOptions } from './assetUrl'
+import type { ASTNode } from './utils'
+import { urlToRequire } from './utils'
+import type { TransformAssetUrlsOptions } from './assetUrl'
 
 interface ImageCandidate {
   require: string
@@ -19,23 +20,22 @@ const escapedSpaceCharacters = /( |\\t|\\n|\\f|\\r)+/g
 
 function transform(
   node: ASTNode,
-  transformAssetUrlsOptions?: TransformAssetUrlsOptions
+  transformAssetUrlsOptions?: TransformAssetUrlsOptions,
 ) {
   const tags = ['img', 'source']
 
-  if (tags.indexOf(node.tag) !== -1 && node.attrs) {
+  if (tags.includes(node.tag) && node.attrs) {
     node.attrs.forEach((attr) => {
       if (attr.name === 'srcset') {
         // same logic as in transform-require.js
         const value = attr.value
-        if (value === '""') {
+        if (value === '""')
           return
-        }
-        const isStatic =
-          value.charAt(0) === '"' && value.charAt(value.length - 1) === '"'
-        if (!isStatic) {
+
+        const isStatic
+          = value.charAt(0) === '"' && value.charAt(value.length - 1) === '"'
+        if (!isStatic)
           return
-        }
 
         const imageCandidates: ImageCandidate[] = value
           .substr(1, value.length - 2)
@@ -62,7 +62,7 @@ function transform(
         const code = imageCandidates
           .map(
             ({ require, descriptor }) =>
-              `${require} + "${descriptor ? ' ' + descriptor : ''}, " + `
+              `${require} + "${descriptor ? ` ${descriptor}` : ''}, " + `,
           )
           .join('')
           .slice(0, -6)

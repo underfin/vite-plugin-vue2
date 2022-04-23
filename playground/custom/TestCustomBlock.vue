@@ -1,11 +1,3 @@
-<template>
-  <div>
-    <p class="custom-block">{{ custom }}</p>
-    <p class="custom-block-lang">{{ customLang }}</p>
-    <p class="custom-block-src">{{ customSrc }}</p>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'TestCustomBlock',
@@ -23,6 +15,20 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <p class="custom-block">
+      {{ custom }}
+    </p>
+    <p class="custom-block-lang">
+      {{ customLang }}
+    </p>
+    <p class="custom-block-src">
+      {{ customSrc }}
+    </p>
+  </div>
+</template>
 
 <custom>
 export default {

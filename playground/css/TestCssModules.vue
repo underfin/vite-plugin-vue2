@@ -1,3 +1,11 @@
+<script>
+import imported from './testCssModules.module.css'
+
+export default {
+  data: () => ({ imported }),
+}
+</script>
+
 <template>
   <div>
     <h2>CSS Modules</h2>
@@ -9,14 +17,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import imported from './testCssModules.module.css'
-
-export default {
-  data: () => ({ imported })
-}
-</script>
 
 <style module>
 .blue {

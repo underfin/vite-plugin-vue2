@@ -1,20 +1,3 @@
-<template>
-  <div>
-    <h1>Vite-Plugin-Vue2 Playground</h1>
-    <TestMultiplySrcImport />
-    <TestBlockSrcImport />
-    <TestScopedCss />
-    <TestCssModules />
-    <TestCustomBlock />
-    <TestHmr />
-    <TestAssets />
-    <TestJsx />
-    <TestJsxSFC />
-    <TestDecorator />
-    <TestES2020Features />
-  </div>
-</template>
-
 <script>
 import TestMultiplySrcImport from './src-import/TestMultiplySrcImport.vue'
 import TestBlockSrcImport from './src-import/TestBlockSrcImport.vue'
@@ -45,3 +28,20 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>
+    <h1>Vite-Plugin-Vue2 Playground</h1>
+    <TestMultiplySrcImport />
+    <TestBlockSrcImport />
+    <TestScopedCss />
+    <TestCssModules />
+    <TestCustomBlock />
+    <TestHmr />
+    <TestAssets />
+    <TestJsx />
+    <TestJsxSFC />
+    <TestDecorator />
+    <TestES2020Features />
+  </div>
+</template>

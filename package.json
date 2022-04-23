@@ -1,9 +1,22 @@
 {
   "name": "vite-plugin-vue2",
   "version": "1.9.3",
-  "description": "Vite plugin for Vue2",
   "packageManager": "pnpm@6.32.3",
+  "description": "Vite plugin for Vue2",
+  "keywords": [
+    "vite",
+    "vue2"
+  ],
+  "license": "MIT",
+  "author": "underfin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/underfin/vite-plugin-vue2"
+  },
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "tsc -w -p . --incremental --skipLibCheck",
     "play": "npm -C playground run dev",
@@ -12,20 +25,8 @@
     "release": "bumpp -x 'npm run changelog' --all --push --commit --tag && npm publish",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "prepublishOnly": "npm run build",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit"
-  },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "vite",
-    "vue2"
-  ],
-  "author": "underfin",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/underfin/vite-plugin-vue2"
   },
   "bugs": {
     "url": "https://github.com/underfin/vite-plugin-vue2/issues"
@@ -34,13 +35,9 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write"
-    ],
-    "*.ts": [
-      "prettier --parser=typescript --write"
-    ]
+  "peerDependencies": {
+    "vite": "^2.0.0",
+    "vue-template-compiler": "^2.2.0"
   },
   "dependencies": {
     "@babel/core": "^7.17.9",
@@ -73,11 +70,8 @@
     "source-map": "^0.7.3",
     "vue-template-babel-compiler": "^1.2.0"
   },
-  "peerDependencies": {
-    "vite": "^2.0.0",
-    "vue-template-compiler": "^2.2.0"
-  },
   "devDependencies": {
+    "@antfu/eslint-config": "^0.20.7",
     "@types/consolidate": "^0.14.1",
     "@types/debug": "^4.1.7",
     "@types/estree": "^0.0.51",
@@ -88,6 +82,7 @@
     "@types/puppeteer": "^5.4.5",
     "bumpp": "^7.1.1",
     "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.14.0",
     "execa": "^6.1.0",
     "jest": "^27.5.1",
     "lint-staged": "^12.4.0",
@@ -97,5 +92,10 @@
     "vite": "^2.9.5",
     "vue-template-compiler": "^2.6.14",
     "yorkie": "^2.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix"
+    ]
   }
 }

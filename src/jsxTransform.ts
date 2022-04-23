@@ -4,7 +4,7 @@ import { transform } from '@babel/core'
 export function transformVueJsx(
   code: string,
   id: string,
-  jsxOptions?: Record<string, any>
+  jsxOptions?: Record<string, any>,
 ) {
   const plugins: any[] = [
     [require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }],

@@ -1,4 +1,4 @@
-import { SFCDescriptor } from '@vue/component-compiler-utils'
+import type { SFCDescriptor } from '@vue/component-compiler-utils'
 
 export interface StartOfSourceMap {
   file?: string
@@ -34,7 +34,7 @@ export interface VueTemplateCompilerOptions {
   modules?: Object[]
   outputSourceRange?: boolean
   whitespace?: 'preserve' | 'condense'
-  directives?: { [key: string]: Function }
+  directives?: Record<string, Function>
 }
 
 export interface VueTemplateCompilerParseOptions {

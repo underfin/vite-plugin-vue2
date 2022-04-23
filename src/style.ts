@@ -1,12 +1,13 @@
-import { TransformPluginContext } from 'rollup'
-import { compileStyle, SFCDescriptor } from '@vue/component-compiler-utils'
+import type { TransformPluginContext } from 'rollup'
+import type { SFCDescriptor } from '@vue/component-compiler-utils'
+import { compileStyle } from '@vue/component-compiler-utils'
 
 export async function transformStyle(
   code: string,
   filename: string,
   descriptor: SFCDescriptor,
   index: number,
-  pluginContext: TransformPluginContext
+  pluginContext: TransformPluginContext,
 ) {
   const block = descriptor.styles[index]
   // vite already handles pre-processors and CSS module so this is only
@@ -21,8 +22,8 @@ export async function transformStyle(
   })
 
   if (result.errors.length) {
-    result.errors.forEach((error) =>
-      pluginContext.error({ id: filename, message: error })
+    result.errors.forEach(error =>
+      pluginContext.error({ id: filename, message: error }),
     )
     return null
   }

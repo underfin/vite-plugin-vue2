@@ -8,6 +8,7 @@
     "declaration": true,
     "noUnusedLocals": true,
     "noEmit": true,
+    "jsx":"preserve",
     "esModuleInterop": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
@@ -18,7 +19,10 @@
     "lib": ["esnext", "dom"],
     "sourceMap": true
   },
-  "include": ["./"],
+  "include": [
+    "./",
+    "../src",
+  ],
   "vueCompilerOptions": {
     "experimentalCompatMode": 2,
     "experimentalTemplateCompilerOptions": {

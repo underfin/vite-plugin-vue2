@@ -1,18 +1,17 @@
-import {
+import consolidate from 'consolidate'
+import transpile from 'vue-template-babel-compiler'
+import type {
+  ErrorWithRange,
   VueTemplateCompiler,
   VueTemplateCompilerOptions,
-  ErrorWithRange,
 } from './types'
 
-import assetUrlsModule, {
+import type {
   AssetURLOptions,
   TransformAssetUrlsOptions,
 } from './assetUrl'
+import assetUrlsModule from './assetUrl'
 import srcsetModule from './srcset'
-
-import consolidate from 'consolidate'
-
-import transpile from 'vue-template-babel-compiler'
 
 export interface TemplateCompileOptions {
   source: string
@@ -39,21 +38,22 @@ export interface TemplateCompileResult {
 }
 
 export function compileTemplate(
-  options: TemplateCompileOptions
+  options: TemplateCompileOptions,
 ): TemplateCompileResult {
   const { preprocessLang } = options
-  const preprocessor =
-    preprocessLang && consolidate[preprocessLang as keyof typeof consolidate]
+  const preprocessor
+    = preprocessLang && consolidate[preprocessLang as keyof typeof consolidate]
   if (preprocessor) {
     return actuallyCompile(
       Object.assign({}, options, {
         source: preprocess(options, preprocessor),
-      })
+      }),
     )
-  } else if (preprocessLang) {
+  }
+  else if (preprocessLang) {
     return {
       ast: {},
-      code: `var render = function () {}\n` + `var staticRenderFns = []\n`,
+      code: 'var render = function () {}\n' + 'var staticRenderFns = []\n',
       source: options.source,
       tips: [
         `Component ${options.filename} uses lang ${preprocessLang} for template. Please install the language preprocessor.`,
@@ -62,16 +62,18 @@ export function compileTemplate(
         `Component ${options.filename} uses lang ${preprocessLang} for template, however it is not installed.`,
       ],
     }
-  } else {
+  }
+  else {
     return actuallyCompile(options)
   }
 }
 
 function preprocess(
   options: TemplateCompileOptions,
-  preprocessor: any
+  preprocessor: any,
 ): string {
-  let { source, filename, preprocessOptions } = options
+  const { source, filename } = options
+  let { preprocessOptions } = options
   if (options.preprocessLang === 'pug') {
     preprocessOptions = {
       doctype: 'html',
@@ -83,7 +85,7 @@ function preprocess(
     {
       filename,
     },
-    preprocessOptions
+    preprocessOptions,
   )
 
   // Consolidate exposes a callback based API, but the callback is in fact
@@ -95,17 +97,19 @@ function preprocess(
     source,
     finalPreprocessOptions,
     (_err: Error | null, _res: string) => {
-      if (_err) err = _err
+      if (_err)
+        err = _err
       res = _res
-    }
+    },
   )
 
-  if (err) throw err
+  if (err)
+    throw err
   return res
 }
 
 function actuallyCompile(
-  options: TemplateCompileOptions
+  options: TemplateCompileOptions,
 ): TemplateCompileResult {
   const {
     source,
@@ -120,8 +124,8 @@ function actuallyCompile(
     prettify = true,
   } = options
 
-  const compile =
-    optimizeSSR && compiler.ssrCompile ? compiler.ssrCompile : compiler.compile
+  const compile
+    = optimizeSSR && compiler.ssrCompile ? compiler.ssrCompile : compiler.compile
 
   let finalCompilerOptions = compilerOptions
   if (transformAssetUrls) {
@@ -139,18 +143,19 @@ function actuallyCompile(
 
   const { ast, render, staticRenderFns, tips, errors } = compile(
     source,
-    finalCompilerOptions
+    finalCompilerOptions,
   )
 
   if (errors && errors.length) {
     return {
       ast,
-      code: `var render = function () {}\n` + `var staticRenderFns = []\n`,
+      code: 'var render = function () {}\n' + 'var staticRenderFns = []\n',
       source,
       tips,
       errors,
     }
-  } else {
+  }
+  else {
     const finalTranspileOptions = Object.assign({}, transpileOptions, {
       transforms: Object.assign({}, transpileOptions.transforms, {
         stripWithFunctional: isFunctional,
@@ -158,16 +163,16 @@ function actuallyCompile(
     })
 
     const toFunction = (code: string): string => {
-      return `function (${isFunctional ? `_h,_vm` : ``}) {${code}}`
+      return `function (${isFunctional ? '_h,_vm' : ''}) {${code}}`
     }
 
     // transpile code with vue-template-es2015-compiler, which is a forked
     // version of Buble that applies ES2015 transforms + stripping `with` usage
-    let code =
-      `var __render__ = ${toFunction(render)}\n` +
-      `var __staticRenderFns__ = [${staticRenderFns.map(toFunction)}]`
+    let code
+      = `var __render__ = ${toFunction(render)}\n`
+      + `var __staticRenderFns__ = [${staticRenderFns.map(toFunction)}]`
 
-    code = transpile(code, finalTranspileOptions) + `\n`
+    code = `${transpile(code, finalTranspileOptions)}\n`
 
     // #23 we use __render__ to avoid `render` not being prefixed by the
     // transpiler when stripping with, but revert it back to `render` to
@@ -177,23 +182,25 @@ function actuallyCompile(
     if (!isProduction) {
       // mark with stripped (this enables Vue to use correct runtime proxy
       // detection)
-      code += `render._withStripped = true`
+      code += 'render._withStripped = true'
 
       if (prettify) {
         try {
+          // eslint-disable-next-line @typescript-eslint/no-var-requires
           code = require('prettier').format(code, {
             semi: false,
             parser: 'babel',
           })
-        } catch (e: any) {
+        }
+        catch (e: any) {
           if (e.code === 'MODULE_NOT_FOUND') {
             tips.push(
-              'The `prettify` option is on, but the dependency `prettier` is not found.\n' +
-                'Please either turn off `prettify` or manually install `prettier`.'
+              'The `prettify` option is on, but the dependency `prettier` is not found.\n'
+                + 'Please either turn off `prettify` or manually install `prettier`.',
             )
           }
           tips.push(
-            `Failed to prettify component ${options.filename} template source after compilation.`
+            `Failed to prettify component ${options.filename} template source after compilation.`,
           )
         }
       }

@@ -1,5 +1,7 @@
-import { TransformAssetUrlsOptions } from './assetUrl'
-import { UrlWithStringQuery, parse as uriParse } from 'url'
+import type { UrlWithStringQuery } from 'url'
+// eslint-disable-next-line n/no-deprecated-api
+import { parse as uriParse } from 'url'
+import type { TransformAssetUrlsOptions } from './assetUrl'
 
 export interface Attr {
   name: string
@@ -13,17 +15,17 @@ export interface ASTNode {
 
 export function urlToRequire(
   url: string,
-  transformAssetUrlsOption: TransformAssetUrlsOptions = {}
+  transformAssetUrlsOption: TransformAssetUrlsOptions = {},
 ): string {
   const returnValue = `"${url}"`
   if (
-    isExternalUrl(url) ||
-    isDataUrl(url) ||
-    isHashUrl(url) ||
-    isAbsolute(url)
-  ) {
+    isExternalUrl(url)
+    || isDataUrl(url)
+    || isHashUrl(url)
+    || isAbsolute(url)
+  )
     return returnValue
-  }
+
   // same logic as in transform-require.js
   const firstChar = url.charAt(0)
   if (firstChar === '~') {
@@ -34,14 +36,15 @@ export function urlToRequire(
   const uriParts = parseUriParts(url)
 
   if (
-    firstChar === '.' ||
-    firstChar === '~' ||
-    firstChar === '@' ||
-    transformAssetUrlsOption.forceRequire
+    firstChar === '.'
+    || firstChar === '~'
+    || firstChar === '@'
+    || transformAssetUrlsOption.forceRequire
   ) {
     if (!uriParts.hash) {
       return `require("${url}")`
-    } else {
+    }
+    else {
       // support uri fragment case by excluding it from
       // the require and instead appending it as string;
       // assuming that the path part is sufficient according to
@@ -80,7 +83,7 @@ function parseUriParts(urlString: string): UrlWithStringQuery {
   if (urlString) {
     // A TypeError is thrown if urlString is not a string
     // @see https://nodejs.org/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost
-    if ('string' === typeof urlString) {
+    if (typeof urlString === 'string') {
       // check is an uri
       return uriParse(urlString) // take apart the uri
     }

@@ -1,10 +1,9 @@
 // vue compiler module for transforming `<tag>:<attribute>` to `require`
 
-import { urlToRequire, ASTNode, Attr } from './utils'
+import type { ASTNode, Attr } from './utils'
+import { urlToRequire } from './utils'
 
-export interface AssetURLOptions {
-  [name: string]: string | string[]
-}
+export type AssetURLOptions = Record<string, string | string[]>
 
 export interface TransformAssetUrlsOptions {
   /**
@@ -27,7 +26,7 @@ const defaultOptions: AssetURLOptions = {
 
 export default (
   userOptions?: AssetURLOptions,
-  transformAssetUrlsOption?: TransformAssetUrlsOptions
+  transformAssetUrlsOption?: TransformAssetUrlsOptions,
 ) => {
   const options = userOptions
     ? Object.assign({}, defaultOptions, userOptions)
@@ -43,20 +42,21 @@ export default (
 function transform(
   node: ASTNode,
   options: AssetURLOptions,
-  transformAssetUrlsOption?: TransformAssetUrlsOptions
+  transformAssetUrlsOption?: TransformAssetUrlsOptions,
 ) {
   for (const tag in options) {
     if ((tag === '*' || node.tag === tag) && node.attrs) {
       const attributes = options[tag]
       if (typeof attributes === 'string') {
-        node.attrs.some((attr) =>
-          rewrite(attr, attributes, transformAssetUrlsOption)
+        node.attrs.some(attr =>
+          rewrite(attr, attributes, transformAssetUrlsOption),
         )
-      } else if (Array.isArray(attributes)) {
-        attributes.forEach((item) =>
-          node.attrs.some((attr) =>
-            rewrite(attr, item, transformAssetUrlsOption)
-          )
+      }
+      else if (Array.isArray(attributes)) {
+        attributes.forEach(item =>
+          node.attrs.some(attr =>
+            rewrite(attr, item, transformAssetUrlsOption),
+          ),
         )
       }
     }
@@ -66,7 +66,7 @@ function transform(
 function rewrite(
   attr: Attr,
   name: string,
-  transformAssetUrlsOption?: TransformAssetUrlsOptions
+  transformAssetUrlsOption?: TransformAssetUrlsOptions,
 ) {
   if (attr.name === name) {
     const value = attr.value

@@ -1,7 +1,8 @@
-import fs from 'fs-extra'
 import path from 'path'
+import fs from 'fs-extra'
 import { execa } from 'execa'
-import puppeteer, { ElementHandle } from 'puppeteer'
+import type { ElementHandle } from 'puppeteer'
+import puppeteer from 'puppeteer'
 
 let devServer: any
 let browser: puppeteer.Browser
@@ -13,9 +14,10 @@ const tempDir = path.join(__dirname, '../temp')
 export async function preTest() {
   try {
     await fs.remove(tempDir)
-  } catch (e) {}
+  }
+  catch (e) {}
   await fs.copy(fixtureDir, tempDir, {
-    filter: (file) => !/dist|node_modules/.test(file),
+    filter: file => !/dist|node_modules/.test(file),
   })
   binPath = path.resolve(tempDir, './node_modules/vite/bin/vite.js')
 
@@ -34,7 +36,8 @@ async function build() {
 export async function postTest() {
   try {
     await fs.remove(tempDir)
-  } catch (e) {}
+  }
+  catch (e) {}
 }
 
 export async function startServer(isBuild: boolean) {
@@ -65,7 +68,8 @@ export async function startServer(isBuild: boolean) {
 }
 
 export async function killServer() {
-  if (browser) await browser.close()
+  if (browser)
+    await browser.close()
   if (devServer) {
     devServer.kill('SIGTERM', {
       forceKillAfterTimeout: 2000,
@@ -73,25 +77,24 @@ export async function killServer() {
   }
 }
 
-const getEl = async (selectorOrEl: string | ElementHandle) => {
+const getEl = async(selectorOrEl: string | ElementHandle) => {
   return typeof selectorOrEl === 'string'
     ? await page.$(selectorOrEl)
     : selectorOrEl
 }
 
-const getText = async (selectorOrEl: string | ElementHandle) => {
+const getText = async(selectorOrEl: string | ElementHandle) => {
   const el = await getEl(selectorOrEl)
-  return el ? el.evaluate((el) => el.textContent) : null
+  return el ? el.evaluate(el => el.textContent) : null
 }
 
-const getComputedColor = async (selectorOrEl: string | ElementHandle) => {
+const getComputedColor = async(selectorOrEl: string | ElementHandle) => {
   return (await getEl(selectorOrEl))!.evaluate(
-    // @ts-ignore
-    (el) => getComputedStyle(el).color
+    el => getComputedStyle(el).color,
   )
 }
 
-const timeout = (n: number) => new Promise((r) => setTimeout(r, n))
+const timeout = (n: number) => new Promise(resolve => setTimeout(resolve, n))
 
 async function updateFile(file: string, replacer: (content: string) => void) {
   const compPath = path.join(tempDir, file)
@@ -104,10 +107,11 @@ async function expectByPolling(poll: () => Promise<any>, expected: any) {
   const maxTries = 100
   for (let tries = 0; tries < maxTries; tries++) {
     const actual = (await poll()) || ''
-    if (actual.indexOf(expected) > -1 || tries === maxTries - 1) {
+    if (actual.includes(expected) || tries === maxTries - 1) {
       expect(actual).toMatch(expected)
       break
-    } else {
+    }
+    else {
       await timeout(50)
     }
   }
@@ -115,22 +119,22 @@ async function expectByPolling(poll: () => Promise<any>, expected: any) {
 
 export function declareTests(isBuild: boolean) {
   if (!isBuild) {
-    test('hmr (vue re-render)', async () => {
+    test('hmr (vue re-render)', async() => {
       const button = await page.$('.hmr-increment')
       await button!.click()
       expect(await getText(button!)).toMatch('>>> 1 <<<')
 
-      await updateFile('hmr/TestHmr.vue', (content) =>
-        content.replace('{{ count }}', 'count is {{ count }}')
+      await updateFile('hmr/TestHmr.vue', content =>
+        content.replace('{{ count }}', 'count is {{ count }}'),
       )
       // note: using the same button to ensure the component did only re-render
       // if it's a reload, it would have replaced the button with a new one.
       await expectByPolling(() => getText(button!), 'count is 1')
     })
 
-    test('hmr (vue reload)', async () => {
-      await updateFile('hmr/TestHmr.vue', (content) =>
-        content.replace('count: 0', 'count: 1337')
+    test('hmr (vue reload)', async() => {
+      await updateFile('hmr/TestHmr.vue', content =>
+        content.replace('count: 0', 'count: 1337'),
       )
       await expectByPolling(() => getText('.hmr-increment'), 'count is 1337')
     })
@@ -148,50 +152,50 @@ export function declareTests(isBuild: boolean) {
   //   })
   // }
 
-  test('SFC <style scoped>', async () => {
+  test('SFC <style scoped>', async() => {
     const el = await page.$('.style-scoped')
     expect(await getComputedColor(el!)).toBe('rgb(138, 43, 226)')
     if (!isBuild) {
-      await updateFile('css/TestScopedCss.vue', (content) =>
-        content.replace('rgb(138, 43, 226)', 'rgb(0, 0, 0)')
+      await updateFile('css/TestScopedCss.vue', content =>
+        content.replace('rgb(138, 43, 226)', 'rgb(0, 0, 0)'),
       )
       await expectByPolling(() => getComputedColor(el!), 'rgb(0, 0, 0)')
     }
   })
 
-  test('SFC <style module>', async () => {
+  test('SFC <style module>', async() => {
     const el = await page.$('.css-modules-sfc')
     expect(await getComputedColor(el!)).toBe('rgb(0, 0, 255)')
     if (!isBuild) {
-      await updateFile('css/TestCssModules.vue', (content) =>
-        content.replace('color: blue;', 'color: rgb(0, 0, 0);')
+      await updateFile('css/TestCssModules.vue', content =>
+        content.replace('color: blue;', 'color: rgb(0, 0, 0);'),
       )
       // css module results in component reload so must use fresh selector
       await expectByPolling(
         () => getComputedColor('.css-modules-sfc'),
-        'rgb(0, 0, 0)'
+        'rgb(0, 0, 0)',
       )
     }
   })
 
-  test('SFC <custom>', async () => {
+  test('SFC <custom>', async() => {
     expect(await getText('.custom-block')).toMatch('Custom Block')
     expect(await getText('.custom-block-lang')).toMatch('Custom Block')
     expect(await getText('.custom-block-src')).toMatch('Custom Block')
   })
 
-  test('SFC src imports', async () => {
+  test('SFC src imports', async() => {
     expect(await getText('.src-imports-script')).toMatch('src="./script.ts"')
     const el = await getEl('.src-imports-style')
     expect(await getComputedColor(el!)).toBe('rgb(119, 136, 153)')
     if (!isBuild) {
       // test style first, should not reload the component
-      await updateFile('src-import/style.css', (c) =>
-        c.replace('rgb(119, 136, 153)', 'rgb(0, 0, 0)')
+      await updateFile('src-import/style.css', c =>
+        c.replace('rgb(119, 136, 153)', 'rgb(0, 0, 0)'),
       )
       await expectByPolling(() => getComputedColor(el!), 'rgb(0, 0, 0)')
       // script
-      await updateFile('src-import/script.ts', (c) => c.replace('hello', 'bye'))
+      await updateFile('src-import/script.ts', c => c.replace('hello', 'bye'))
       await expectByPolling(() => getText('.src-imports-script'), 'bye from')
       // template
       // todo fix test, file change is only triggered one event.
@@ -206,11 +210,11 @@ export function declareTests(isBuild: boolean) {
     }
   })
 
-  test('Jsx', async () => {
+  test('Jsx', async() => {
     expect(await getText('.jsx')).toMatch('JSX works!')
   })
 
-  test('JsxSFC', async () => {
+  test('JsxSFC', async() => {
     expect(await getText('.jsx-sfc')).toMatch('JSX & SFC works!')
   })
 }

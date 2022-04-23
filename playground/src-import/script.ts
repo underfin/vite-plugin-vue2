@@ -1,4 +1,4 @@
-const msg: string = 'hello from <script src="./script.ts">'
+const msg = 'hello from <script src="./script.ts">'
 
 export default {
   data() {

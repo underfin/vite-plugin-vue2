@@ -9,6 +9,7 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "removeComments": false,
+    "jsx": "preserve",
     "experimentalDecorators": true,
     "outDir": "dist",
     "module": "commonjs",

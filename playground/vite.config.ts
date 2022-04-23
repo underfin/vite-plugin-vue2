@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-const { createVuePlugin } = require('../dist')
+import { createVuePlugin } from '../src/index'
 
 const config = defineConfig({
   resolve: {

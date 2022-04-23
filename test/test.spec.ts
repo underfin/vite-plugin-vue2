@@ -1,14 +1,14 @@
 import {
-  preTest,
-  postTest,
   declareTests,
-  startServer,
   killServer,
+  postTest,
+  preTest,
+  startServer,
 } from './util'
 
 jest.setTimeout(100000)
 
-beforeAll(async () => {
+beforeAll(async() => {
   await preTest()
 })
 
@@ -16,11 +16,11 @@ afterAll(postTest)
 
 describe('vite-plugin-vue2', () => {
   describe('dev', () => {
-    beforeAll(async () => {
+    beforeAll(async() => {
       await startServer(false)
     })
 
-    afterAll(async () => {
+    afterAll(async() => {
       await killServer()
     })
 
@@ -28,11 +28,11 @@ describe('vite-plugin-vue2', () => {
   })
 
   describe('build', () => {
-    beforeAll(async () => {
+    beforeAll(async() => {
       await startServer(true)
     })
 
-    afterAll(async () => {
+    afterAll(async() => {
       await killServer()
     })
 

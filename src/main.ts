@@ -250,8 +250,8 @@ function genHmrCode(
   const idJSON = JSON.stringify(id)
   return `\n/* hot reload */
 import __VUE_HMR_RUNTIME__ from ${JSON.stringify(vueHotReload)}
-import vue from "vue"
-__VUE_HMR_RUNTIME__.install(vue)
+import __VUE_IDENTIFIER__ from "vue"
+__VUE_HMR_RUNTIME__.install(__VUE_IDENTIFIER__)
 if(!import.meta.env.SSR && __VUE_HMR_RUNTIME__.compatible){
   if (!__VUE_HMR_RUNTIME__.isRecorded(${idJSON})) {
     __VUE_HMR_RUNTIME__.createRecord(${idJSON}, __component__.options)

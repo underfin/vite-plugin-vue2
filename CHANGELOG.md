@@ -1,3 +1,17 @@
+## [2.0.1](https://github.com/underfin/vite-plugin-vue2/compare/v2.0.0...v2.0.1) (2022-05-18)
+
+
+### Bug Fixes
+
+* HMR identifier conflict ([#196](https://github.com/underfin/vite-plugin-vue2/issues/196)) ([0248eff](https://github.com/underfin/vite-plugin-vue2/commit/0248eff571a64f383b15ae92ea71bef18aa30398))
+
+
+### Features
+
+* ignore empty style ([#193](https://github.com/underfin/vite-plugin-vue2/issues/193)) ([22410b8](https://github.com/underfin/vite-plugin-vue2/commit/22410b864b2af8d81c478b0cbe8e4caa7cdd8a27))
+
+
+
 # [2.0.0](https://github.com/underfin/vite-plugin-vue2/compare/v1.9.3...v2.0.0) (2022-04-23)
 
 

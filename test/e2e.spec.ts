@@ -100,6 +100,17 @@ export function declareTests(isBuild: boolean) {
     }
   })
 
+  test('SFC empty style', async() => {
+    const el = await page.$$eval('style', (elements) => {
+      return elements.map((e) => {
+        return e.innerHTML?.trim()
+      }).filter((e) => {
+        return !e
+      })
+    })
+    expect(el).toHaveLength(0)
+  })
+
   test('SFC <custom>', async() => {
     expect(await getText('.custom-block')).toMatch('Custom Block')
     expect(await getText('.custom-block-lang')).toMatch('Custom Block')

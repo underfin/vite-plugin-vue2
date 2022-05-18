@@ -283,6 +283,8 @@ async function genStyleRequest(
   let stylesCode = ''
   for (let i = 0; i < descriptor.styles.length; i++) {
     const style = descriptor.styles[i]
+    if (!style.src && (!style.content || !style.content.trim()))
+      continue
     const src = style.src || filename
     const attrsQuery = attrsToQuery(style.attrs, 'css')
     const srcQuery = style.src ? '&src' : ''

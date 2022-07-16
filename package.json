@@ -36,7 +36,7 @@
     "pre-commit": "lint-staged"
   },
   "peerDependencies": {
-    "vite": "^2.0.0",
+    "vite": "^2.0.0 || ^3.0.0",
     "vue-template-compiler": "^2.2.0"
   },
   "dependencies": {

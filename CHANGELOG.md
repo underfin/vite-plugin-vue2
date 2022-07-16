@@ -1,3 +1,12 @@
+## [2.0.2](https://github.com/underfin/vite-plugin-vue2/compare/v2.0.1...v2.0.2) (2022-07-16)
+
+
+### Features
+
+* support vite 3 ([#204](https://github.com/underfin/vite-plugin-vue2/issues/204)) ([dc6856e](https://github.com/underfin/vite-plugin-vue2/commit/dc6856e528c0b87748f154539f9c71c1cdab2a18))
+
+
+
 ## [2.0.1](https://github.com/underfin/vite-plugin-vue2/compare/v2.0.0...v2.0.1) (2022-05-18)
 
 

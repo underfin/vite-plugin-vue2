@@ -35,6 +35,11 @@ export interface VueViteOptions {
    */
   jsx?: boolean
   /**
+   * The extension regexp for jsx files
+   * @default /\.(tsx|jsx)$/
+   */
+  jsxExtensions?: RegExp
+  /**
    * The options for `@vue/babel-preset-jsx`
    */
   jsxOptions?: Record<string, any>
@@ -56,6 +61,7 @@ export interface ResolvedOptions extends VueViteOptions {
 export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
   const options: ResolvedOptions = {
     isProduction: process.env.NODE_ENV === 'production',
+    jsxExtensions: /\.(tsx|jsx)$/,
     ...rawOptions,
     root: process.cwd(),
   }
@@ -70,7 +76,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
         return {
           esbuild: {
             include: /\.ts$/,
-            exclude: /\.(tsx|jsx)$/,
+            exclude: [ options.jsxExtensions, /\.tsx$/ ],
           },
         }
       }
@@ -138,7 +144,7 @@ export function createVuePlugin(rawOptions: VueViteOptions = {}): Plugin {
     async transform(code, id) {
       const { filename, query } = parseVueRequest(id)
 
-      if (/\.(tsx|jsx)$/.test(id))
+      if (options.jsxExtensions && options.jsxExtensions.test(id))
         return transformVueJsx(code, id, options.jsxOptions)
 
       if ((!query.vue && !filter(filename)) || query.raw)

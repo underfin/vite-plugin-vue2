@@ -47,6 +47,15 @@ Default: `false`
 
 The options for jsx transform.
 
+### `jsxExtensions`
+
+Type: `RegExp`<br>
+Default: `/\.(tsx|jsx)$/`
+
+The options for jsx files.
+
+> If you want to treat `.js` files as `.jsx` files, regexp `/(?<!\.vue\?.+&lang)\.jsx?$/` may be available for you to skip file paths like `"some.vue?vue&type=template&lang.js"`.
+
 ### `jsxOptions`
 
 Type: `Object`<br>

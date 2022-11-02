@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/vite-plugin-vue2?color=a1b858&label=)](https://www.npmjs.com/package/vite-plugin-vue2)
 
-> ⚠️ With the release of [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html), Vite now provides the offfical Vue 2 plugin [`@vitejs/plugin-vue2`](https://github.com/vitejs/vite-plugin-vue2). Thereby this plugin has entered maintenance mode and will only support Vue 2.6 or earlier. This project will reach End of Life by the end of 2022.
+> ⚠️ With the release of [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html), Vite now provides the official Vue 2 plugin [`@vitejs/plugin-vue2`](https://github.com/vitejs/vite-plugin-vue2). Thereby this plugin has entered maintenance mode and will only support Vue 2.6 or earlier. This project will reach End of Life by the end of 2022.
 
 ## Install
 

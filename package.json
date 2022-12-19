@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-vue2",
   "version": "2.0.2",
-  "packageManager": "pnpm@6.32.3",
+  "packageManager": "pnpm@7.13.4",
   "description": "Vite plugin for Vue2",
   "keywords": [
     "vite",

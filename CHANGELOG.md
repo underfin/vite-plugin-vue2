@@ -1,3 +1,12 @@
+## [2.0.3](https://github.com/underfin/vite-plugin-vue2/compare/v2.0.2...v2.0.3) (2022-12-19)
+
+
+### Features
+
+* support Vite 4 as peerDependency ([#213](https://github.com/underfin/vite-plugin-vue2/issues/213)) ([db6e905](https://github.com/underfin/vite-plugin-vue2/commit/db6e905ec325a9189c04d7f9b5bc30f03318b2a3))
+
+
+
 ## [2.0.2](https://github.com/underfin/vite-plugin-vue2/compare/v2.0.1...v2.0.2) (2022-07-16)
 
 
